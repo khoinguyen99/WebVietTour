@@ -1,0 +1,83 @@
+﻿@model WebsiteRapChieuPhim.Models.thongTinTour
+
+@{
+    ViewBag.Title = "DetailsOderTours";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2>DetailsOderTours</h2>
+
+<div>
+    <h4>thongTinTour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.hoten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hoten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diachi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diachi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dienthoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dienthoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khoihanhngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khoihanhngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tongsokhach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tongsokhach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tentours)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tentours)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditOderTours", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "dsodertour")
+</p>

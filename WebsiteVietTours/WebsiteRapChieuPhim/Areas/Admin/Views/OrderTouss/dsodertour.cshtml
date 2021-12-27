@@ -1,0 +1,104 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.thongTinTour>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Đặt Tour";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2 style="text-align:center"> DANH SÁCH ĐẶT TOUR</h2><br />
+<form method="get" action="@Url.Action("tourdadis","OrderTouss")" style="margin-left:45%">
+    <select name="key" class="select">
+
+
+        <option value="true">Đã đi</option>
+        <option value="false">Chưa đi</option>
+
+    </select>
+    <input type="submit" value="Tìm" /><a href="@Url.Action("dsodertour","OrderTouss")"><img src="~/resource/admin/images/loading.png" width="20px" height="20px" style="margin-left:5px" /></a>
+</form>
+
+
+    <p>
+        @Html.ActionLink("Create New", "CreateOderTours")
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Họ tên
+                </th>
+                <th>
+                    Địa chỉ
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Điện thoại
+                </th>
+                <th>
+                    Khởi hành ngày
+                </th>
+                <th>
+                    Tổng số khách
+                </th>
+                <th>
+                    Note
+                </th>
+                <th>
+                    Tên Tour
+                </th>
+                <th>Tour Đã đi</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            @foreach (var item in Model)
+            {
+
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hoten)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.diachi)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dienthoai)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.khoihanhngay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tongsokhach)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.note)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tentours, new { @id = "kk" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tourdadi)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditOderTours", new { id = item.id }) |
+                        @Html.ActionLink("Details", "DetailsOderTours", new { id = item.id }) |
+                        @Html.ActionLink("Delete", "DeleteOderTours", new { id = item.id })
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <div>@Html.PagedListPager(Model, page => Url.Action("dsodertour", new { page }))</div>
+
+
+
+
+

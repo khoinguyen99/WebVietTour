@@ -1,0 +1,61 @@
+﻿@model WebsiteRapChieuPhim.Models.TinTuc
+
+@{
+    ViewBag.Title = "DetailsTinTuc";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    #thugon {
+        width: 100%;
+        height: 200px;
+        overflow: auto;
+    }
+    dt{
+        color:firebrick;
+        font-size:25px;
+    }
+
+</style>
+<h2 style="width:100%;text-align:center">Details Tin Tức</h2>
+
+<div style="width:80%;margin-left:15px">
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descrip)
+        </dt>
+        <dd>
+            <div id="thugon">@Html.DisplayFor(model => model.descrip)</div>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+    </dl>
+</div>
+<p align="center" style="width:80%">
+    @Html.ActionLink("Edit", "EditTinTuc", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "qlTinTuc")
+</p>

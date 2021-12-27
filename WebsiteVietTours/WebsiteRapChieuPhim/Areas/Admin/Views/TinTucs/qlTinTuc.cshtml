@@ -1,0 +1,66 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.TinTuc>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "qlTinTuc";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    #father {
+        width: 600px;
+        height:200px;
+        overflow: auto;     
+    }
+
+</style>
+<h2 align="center" style="width:100%">DANH SÁCH TIN TỨC</h2>
+
+<p style="margin-left:15px">
+    @Html.ActionLink("Create New", "CreateTinTuc")
+</p>
+<table class="table">
+    <tr style="text-align:center;color:brown">
+        <th>
+           Title
+        </th>
+        <th>
+           Content
+        </th>
+        <th>
+            Descrtipstion
+        </th>
+        <th>
+            Image
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @{ 
+                string str = item.title.ToString();
+                int leng = str.Length;
+            }
+            @Html.DisplayFor(modelItem => item.title,leng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.content)
+        </td>
+
+        <td >
+            <div id="father">@Html.DisplayFor(modelItem => item.descrip)</div>
+            
+        </td>
+        <td >
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td >
+            @Html.ActionLink("Edit", "EditTinTuc", new { id=item.id })
+            @Html.ActionLink("Details", "DetailsTinTuc", new { id=item.id })
+            @Html.ActionLink("Delete", "DeleteTinTuc", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+<div>@Html.PagedListPager(Model, page => Url.Action("qlTinTuc", new { page }))</div>

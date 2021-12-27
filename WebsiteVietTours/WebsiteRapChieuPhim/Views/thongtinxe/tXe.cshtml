@@ -1,0 +1,133 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.NewsXe>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "tXe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+</style>
+@*<h2>tXe</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.loaixe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tuyenxe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dongia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.image)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaixe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tuyenxe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dongia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.image)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+
+
+
+
+
+
+
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">CHO THUÊ XE DỊCH VỤ</span></h2>
+@foreach (var item in Model)
+{
+    <table class="table box_hotel_cate">
+
+        <tr>
+            <td rowspan="4">
+
+                @{
+                    string imagePath = "~/resource/upload/images/" + item.image;
+                }
+
+                <div class="img-container">
+
+                    <img alt="cc" src="@Url.Content(imagePath)" class="img-thumbnail" style="width:900px;height:200px" />
+
+                </div>
+            </td>
+            <td> <b style="color:red">@Html.DisplayFor(modelItem => item.loaixe)</b></td>
+            <td rowspan="4">
+
+                <div style="width:100%">
+                    <div class="clearfix clearfix-45"></div>
+                    <a href="@Url.Action("chitietXe","thongtinxe",new {id =item.id})" style="text-align:center" class="view_hotel_cate">xem chi tiết</a>
+                    <div class="clearfix clearfix-40"></div>
+                </div>
+
+            </td>
+        </tr>
+        <tr>
+
+            <td>@Html.Raw(item.rage)</td>
+
+
+        </tr>
+        <tr>
+
+            <td><b style="color: rgb(179, 96, 4) !important">Nội thành : @Html.DisplayFor(modelItem => item.tuyenxe) VNĐ</b></td>
+
+        </tr>
+        <tr>
+
+            <td><b style="color:brown">Đơn giá : @Html.DisplayFor(modelItem => item.dongia)</b></td>
+
+        </tr>
+
+        
+    </table>
+                    }
+    <div align="right" style="width: 100%">
+        @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount*@
+        @Html.PagedListPager(Model, page => Url.Action("tXe", new { page }))
+    </div>
+
+

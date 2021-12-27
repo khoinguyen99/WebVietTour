@@ -1,0 +1,131 @@
+﻿@model WebsiteRapChieuPhim.Models.NewsXe
+
+@{
+    ViewBag.Title = "chitietXe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+</style>
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">@Html.DisplayFor(modelItem => Model.loaixe)</span></h2>
+
+@*<div>
+    <h4>NewsXe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.loaixe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loaixe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuyenxe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuyenxe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dongia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desctipt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desctipt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+<table class="table box_hotel_cate">
+
+    <tr>
+        <td rowspan="4">
+
+            @{
+                string imagePath = "~/resource/upload/images/" + Model.image;
+            }
+
+            <div class="img-container">
+
+                <img alt="cc" src="@Url.Content(imagePath)" class="img-thumbnail" style="width:400px;height:200px" />
+
+            </div>
+        </td>
+        <td> <b style="color:red">@Html.DisplayFor(modelItem => Model.loaixe)</b></td>
+       
+    </tr>
+    <tr>
+
+        <td>@Html.Raw(Model.rage)</td>
+
+
+    </tr>
+    <tr>
+
+        <td><b style="color: rgb(179, 96, 4) !important">Nội thành : @Html.DisplayFor(modelItem => Model.tuyenxe) VNĐ</b></td>
+
+    </tr>
+    <tr>
+
+        <td><b style="color:brown">Đơn giá : @Html.DisplayFor(modelItem => Model.dongia)</b></td>
+
+    </tr>
+
+
+</table>
+@{ 
+    string str = Model.desctipt;
+    string re = str.Replace("http://viettour.com.vn", "/resource");
+
+
+}
+@Html.Raw(@HttpUtility.HtmlDecode(re.ToString()))

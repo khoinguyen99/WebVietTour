@@ -1,0 +1,549 @@
+﻿@using WebsiteRapChieuPhim.Models
+@{
+    ViewBag.Title = "Trang Chu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    List<DatTour> result = new List<DatTour>();
+
+
+}
+
+<link href="~/Content/luhanh.css" rel="stylesheet" />
+<style>
+    p {
+        font-family: arial;
+        font-size: 13px;
+        color: #333;
+    }
+
+    .md-6 {
+        width: 45%;
+        float: left;
+    }
+
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+</style>
+
+
+
+
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">NEW TOUR</span></h2>
+
+@{
+    result = new datTTour().newtourss();
+
+    <div class="row" style="margin-left:10px;">
+        <div class="owl-carousel slider_tour owl-theme" style="opacity: 1; display: block;">
+            <div class="owl-wrapper-outer autoHeight" style="height: auto;align-content:center">
+                <div class="owl-wrapper" id="content" style="width: 6144px; left: 0px; display: block; transition: all 500ms ease 0s">
+                    @foreach (var item in result)
+                    {
+
+                        <div class="owl-item" id="itemcontent" style="width: 300px;">
+
+                            <div class="item">
+                                <div class="box_tour_km">
+                                    <a href="@Url.Action("chitietTour","Home",new {id=item.id})" class="img_tour_km h_6667" title="hi">
+
+                                        @{
+                                            string imagePath = "~/resource/upload/images/" + item.thumnail;
+                                        }
+                                        <div class="img-container">
+                                            <img class="img-thumbnail" src="@Url.Content(imagePath)" alt="#" style="height: 100px;width:300px">
+
+                                            <div class="sale_tour_km">
+                                                Giảm @item.khuyenmai%
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <div class="clearfix"></div>
+                                    <div class="sub_tour_km">
+                                        <h3 class="name_tour_km">@item.tentour</h3>
+
+                                        <div class="clearfix"></div>
+                                        <div class="time_tour_km">TOUR: @item.thoigian</div>
+                                        <div class="clearfix"></div>
+                                        <div class="price_tour_km">
+                                            <div class="txt_price_tour">
+                                                Giá:
+                                            </div>
+                                            <div class="number_price_tour">
+                                                <del class="price_old_tour_km">@item.gia VNĐ</del>
+                                                <div class="clearfix"></div>
+                                                @{
+
+
+                                                    string str1 = @item.gia;
+                                                    String replaceStrings = str1.Replace(",", "");
+
+                                                    double x = Convert.ToDouble(replaceStrings);
+                                                    double y = Convert.ToDouble(@item.khuyenmai);
+                                                    double strs = x * (100 - y) / 100;
+
+                                                }
+                                                <div class="price_new_tour_km">@String.Format("{0:#,##0.##}", strs) VNĐ</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/Scripts/nextslide.js" async></script>
+
+    <h2 class="tit_home" style="text-align:left;margin-bottom:20px"><span class="txt_tit_home">LỊCH KHỞI HÀNH</span></h2>
+    <div class="list_banner_home">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <a href="@Url.Action("TuorKhuyenMai","Home",new {id=62})" class="img_tour_km banner_home h_246">
+                    <img class="w_100" src="~/resource/upload/img/banner/trungquoc608x150-0904-Recovered_(1).jpg" alt="" style="height: 160px;">
+                    <div class="sale_tour_km">
+                        Khuyến mãi
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <a href="@Url.Action("TuorKhuyenMai","Home",new {id=63})" class="img_tour_km banner_home h_246">
+                    <img class="w_100" src="~/resource/upload/img/banner/trieutien608x150-2903.jpg" alt="" style="height: 160px;">
+                    <div class="sale_tour_km">
+                        Khuyến mãi
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <a href="@Url.Action("TuorKhuyenMai","Home",new {id=64})" class="img_tour_km banner_home h_246">
+                    <img class="w_100" src="~/resource/upload/img/banner/uc608x150-1604_(1).jpg" alt="" style="height: 160px;">
+                    <div class="sale_tour_km">
+                        Khuyến mãi
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <a href="@Url.Action("TuorKhuyenMai","Home",new {id=65})" class="img_tour_km banner_home h_246">
+                    <img class="w_100" src="~/resource/upload/img/banner/nga608x150-0904.jpg" alt="" style="height: 160px;">
+                    <div class="sale_tour_km">
+                        Khuyến mãi
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="search_content_s">
+        <div class="img_search_s"><img src="http://viettour.com.vn/assets/css/img/search.png" alt=""></div>
+        <form method="get" action="@Url.Action("diemdens","Home")">
+            <div class="right_search_s">
+                <div class="thongtintourhot">
+                    <span>
+                        &nbsp;
+                        <span style="color: rgb(0, 51, 102);">Trên <strong>500 tour </strong></span>
+                    </span>
+                    <a href="">
+                        <span><span style="color: rgb(0, 51, 102);">du lịch trong &amp; </span></span>
+                    </a>
+                    <span>
+                        <span style="color: rgb(0, 51, 102);">&nbsp;ngoài nước đang có trên website, chọn<strong> </strong></span>
+                    </span>
+                    <span style="color: rgb(0, 51, 102);">
+                        <strong><a href=""><span>lịch khởi hành</span></a></strong>
+                    </span>
+                    <span><span style="color: rgb(0, 51, 102);"> để xem chi tiết</span></span>
+                </div>
+                <div class="clearfix"></div>
+                <div id="khoihanh">
+                    Khởi hành từ
+                    <select name="keys" class="select" id="select2">
+
+                        <option value="60">HÀ NỘI</option>
+                    </select>
+                </div>
+                <div id="diemden">
+                    đến
+                    <label>
+                        <select name="key" class="select">
+                            <option value=" ">Chọn điểm đến</option>
+                            <optgroup label="Trong nước">
+                                <option value="HÀ NỘI">HÀ NỘI &amp; LÂN CẬN</option>
+                                <option value="NHA TRANG">NHA TRANG</option>
+                                <option value="QUẢNG BÌNH">QUẢNG BÌNH</option>
+                                <option value="SAPA &amp; ĐÔNG TÂY BẮC">SAPA &amp; ĐÔNG TÂY BẮC</option>
+                                <option value="HUẾ, ĐÀ NẴNG, HỘI AN">HUẾ, ĐÀ NẴNG, HỘI AN</option>
+                                <option value="ĐÀ LẠT, TÂY NGUYÊN">ĐÀ LẠT, TÂY NGUYÊN</option>
+                                <option value="PHÚ YÊN, QUY NHƠN">PHÚ YÊN, QUY NHƠN</option>
+                                <option value="MŨI NÉ, NHA TRANG">MŨI NÉ, NHA TRANG</option>
+                                <option value="MIỄN TÂY">MIỄN TÂY</option>
+                                <option value="MỘC CHÂU">MỘC CHÂU</option>
+                                <option value="HÀ GIANG">HÀ GIANG</option>
+                                <option value="QUY NHƠN">QUY NHƠN</option>
+                                <option value="CAO BẰNG">CAO BẰNG</option>
+
+                            </optgroup>
+                            <optgroup label="Nước ngoài">
+                                <option value="THÁI LAN">THÁI LAN</option>
+                                <option value="SINGAPORE">SINGAPORE</option>
+                                <option value="HÀN QUỐC">HÀN QUỐC</option>
+                                <option value="NHẬT BẢN">NHẬT BẢN</option>
+                                <option value="MALAYSIA">MALAYSIA</option>
+                                <option value="TRUNG QUỐC">TRUNG QUỐC</option>
+                                <option value="ĐÀI LOAN">ĐÀI LOAN</option>
+                                <option value="HÔNG KÔNG">HÔNG KÔNG</option>
+                                <option value="HOA KỲ">HOA KỲ</option>
+                                <option value="CHÂU ÂU">CHÂU ÂU</option>
+                                <option value="DUBAI">DUBAI</option>
+                                <option value="ÚC">ÚC</option>
+                                <option value="ẤN ĐỘ">ẤN ĐỘ</option>
+                                <option value="BRUNEI">BRUNEI </option>
+                                <option value="CAMPUCHIA">CAMPUCHIA</option>
+                                <option value="INDONESIA">INDONESIA</option>
+                                <option value="LÀO">LÀO</option>
+                                <option value="MYANMAR">MYANMAR</option>
+                                <option value="MALDIVES">MALDIVES</option>
+                                <option value="HAWAII">HAWAII</option>
+                                <option value="NAM PHI">NAM PHI</option>
+                                <option value="NGA">NGA</option>
+                                <option value="PHILIPPINES">PHILIPPINES</option>
+                                <option value="DU LỊCH CHỮA BỆNH">DU LỊCH CHỮA BỆNH</option>
+                                <option value="CANADA">CANADA</option>
+                                <option value="TRIỀU TIÊN">TRIỀU TIÊN</option>
+                                <option value="PHƯỢNG HOÀNG CỔ TRẤN">PHƯỢNG HOÀNG CỔ TRẤN</option>
+                                <option value="LỆ GIANG">LỆ GIANG</option>
+                                <option value="BẮC KINH - THƯỢNG HẢI - HÀNG CHÂU - TÔ CHÂU">BẮC KINH - THƯỢNG HẢI - HÀNG CHÂU - TÔ CHÂU</option>
+                            </optgroup>
+                        </select>
+                    </label>
+                    <input type="submit" class="tim_home" value="&nbsp;">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="clearfix" style="margin-bottom: 20px"></div>
+    <div class="row">
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+            <a href="@Url.Action("TuorKhuyenMai","Home")" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img style="padding: 15px 40px" width="100%" height="100" src="~/resource/upload/unnamed1.png" class="vc_single_image-img attachment-full" alt="asdas"></div></a>
+
+
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="md-6" style="margin-right: 15px">
+                <a href="@Url.Action("tournuocngoai","TourNuocNgoai")" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img width="100%" height="100" src="~/resource/upload/unnamed2.jpg" class="vc_single_image-img attachment-full" alt="asdas"></div></a>
+            </div>
+            <div class="md-6">
+                <a href="@Url.Action("tournuoc","TourTrongNuocs")" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img width="100%" height="100" src="~/resource/upload/unnamed3.jpg" class="vc_single_image-img attachment-full" alt="asdas"></div></a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="clearfix" style="margin-bottom: 20px"></div>
+
+
+
+    //Các Tour
+    <div class="row" style="padding:0px">
+
+
+        <div class="col-md-6 col-sm-12 col-sx-12">
+            <div class="wap_tour_bot clearfix">
+                <h2 class="tit_tour_bot"><a href="http://viettour.com.vn/tour-le-tet-trong-nuoc.html" class="txt_tit_tour_bot">Tour Lễ &amp; Tết Trong Nước</a></h2>
+
+                <div class="clearfix"></div>
+                <div class="tournew">
+                    <h2>DU LỊCH LỄ TẾT: CAO LINH - BẠCH ĐẰNG GIANG - CHÙA HANG </h2>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-5 imgnew nopadding">
+                        <img src="~/resource/upload/img/products/5bbfeeca14de3982844d8fbc6ad67251.jpg" class="w_100" width="200" height="150">
+                    </div>
+                    <div class="col-md-7 newdetail nopaddingright" style="font-size: 14px">
+                        <b>Vận chuyển:</b>  Ô TÔ<br>
+                        <b>Thời gian:</b> 1 NGÀY<br>
+                        <b>Điểm khởi hành:</b> HÀ NỘI<br>
+                        <b>Khởi hành ngày:</b> HÀNG NGÀY<br>
+
+
+                        <div class="pricenew">
+                            <ul>
+                                <li>
+                                    <del>Giá gốc: 790,000</del><br>
+                                    Giá KM: <span style="    color: #c50e0e;
+    font-size: 17px;
+    font-weight: bold;">490,000 đ</span>
+                                </li>
+                                <li style="text-align: right; overflow: hidden;padding:10px">
+
+                                    <a href="@Url.Action("chitietTour","Home",new {id = 60})">
+                                        Xem ngay
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <ul class="list_tour_bot">
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH LỄ TẾT: CHÙA HƯƠNG - CHÙA TAM CHÚC" href="#"><h3>DU LỊCH LỄ TẾT: CHÙA HƯƠNG - CHÙA TAM CHÚC</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">640,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH LỄ TẾT: BÁI ĐÍNH - TRÀNG AN " href="@Url.Action("chitietTour","Home",new {id = 31})"><h3>DU LỊCH LỄ TẾT: BÁI ĐÍNH - TRÀNG AN </h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">790,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH LỄ TẾT: ĐỀN CỬA ÔNG - CHÙA CÁI BẦU - CHÙA BA VÀNG" href="@Url.Action("chitietTour","Home",new {id = 30})"><h3>DU LỊCH LỄ TẾT: ĐỀN CỬA ÔNG - CHÙA CÁI BẦU - CHÙA BA VÀNG</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">590,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH TẾT: CHÙA BA VÀNG - YÊN TỬ " href="#"><h3>DU LỊCH TẾT: CHÙA BA VÀNG - YÊN TỬ </h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">490,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH CÚC PHƯƠNG" href="#"><h3>DU LỊCH CÚC PHƯƠNG</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">650,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="Tour Du lịch Bái Đính – Hang Múa – Tuyệt Tịnh cốc" href="#"><h3>Tour Du lịch Bái Đính – Hang Múa – Tuyệt Tịnh cốc</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">560,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH TẾT: HÀ NỘI – LÀO CAI – SAPA" href="#"><h3>DU LỊCH TẾT: HÀ NỘI – LÀO CAI – SAPA</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">4,350,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH TẾT ÂM LỊCH: HÀ NỘI - TRÀNG AN - ĐẢO KONG - BÁI ĐÍNH HẠ LONG - KDL YÊN TỬ" href="#"><h3>DU LỊCH TẾT ÂM LỊCH: HÀ NỘI - TRÀNG AN - ĐẢO KONG - BÁI ĐÍNH HẠ LONG - KDL YÊN TỬ</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">4,150,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH TẾT ÂM: HÀ NỘI - TRÀNG AN - ĐẢO KONG - BÁI  ĐÍNH - HẠ LONG - KDL YÊN TỬ - SAPA" href="http://viettour.com.vn/du-lich-tet-am-ha-noi-trang-an-dao-kong-bai-dinh-ha-long-kdl-yen-tu-sapa.html"><h3>DU LỊCH TẾT ÂM: HÀ NỘI - TRÀNG AN - ĐẢO KONG - BÁI  ĐÍNH - HẠ LONG - KDL YÊN TỬ - SAPA</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">6,050,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH HÀ NỘI – PHÙ YÊN – BẮC YÊN – TÀ XÙA" href="#"><h3>DU LỊCH HÀ NỘI – PHÙ YÊN – BẮC YÊN – TÀ XÙA</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">1,136,000  VNĐ</span></span>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12 col-sx-12">
+            <div class="wap_tour_bot clearfix">
+                <h2 class="tit_tour_bot"><a href="#" class="txt_tit_tour_bot">Tour Lễ &amp; Tết Nước Ngoài</a></h2>
+
+                <div class="clearfix"></div>
+                <div class="tournew">
+                    <h2>DU XUÂN ĐÀI LOAN: ĐÀI TRUNG - NAM ĐẦU - CAO HÙNG - ĐÀI BẮC</h2>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-5 imgnew nopadding">
+                        <img src="~/resource/upload/img/products/cdd1fcada4b7bebf44c827b4c73dd3f0.jpg" class="w_100" height="150">
+                    </div>
+                    <div class="col-md-7 newdetail nopaddingright" style="font-size: 14px">
+                        <b>Vận chuyển:</b>  CHINA AIRLINES<br>
+                        <b>Thời gian:</b> 5 NGÀY 4 ĐÊM<br>
+                        <b>Điểm khởi hành:</b> HÀ NỘI<br>
+                        <b>Khởi hành ngày:</b> 03,05,07/2/2018(29,01,03 TẾT ÂM LỊCH)<br>
+
+
+                        <div class="pricenew">
+                            <ul>
+                                <li>
+                                    <del>Giá gốc: 17,990,000</del><br>
+                                    Giá KM: <span style="    color: #c50e0e;
+    font-size: 17px;
+    font-weight: bold;">14,990,000 đ</span>
+                                </li>
+                                <li style="text-align: right; overflow: hidden;padding:10px">
+
+                                    <a href="@Url.Action("chitietTour","Home",new {id = 61})">
+                                        Xem ngay
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <ul class="list_tour_bot">
+
+                    <li>
+                        <a class="name_tour_bot" title="DU XUÂN CÙNG CHUỘT TÚI: MELBOURNE - SYDNEY" href="#"><h3>DU XUÂN CÙNG CHUỘT TÚI: MELBOURNE - SYDNEY</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">61,500,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH ĐÓN TẾT ÂM LỊCH TẠI CHÂU ÂU: PHÁP - BỈ  - HÀ LAN - ĐỨC" href="#"><h3>DU LỊCH ĐÓN TẾT ÂM LỊCH TẠI CHÂU ÂU: PHÁP - BỈ  - HÀ LAN - ĐỨC</h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">52,990,000  VNĐ</span></span>
+                    </li>
+
+
+                    <li>
+                        <a class="name_tour_bot" title="DU LỊCH CHÂU ÂU 5 NƯỚC: PHÁP - LUX - ĐỨC - BỈ - HÀ LAN " href="#"><h3>DU LỊCH CHÂU ÂU 5 NƯỚC: PHÁP - LUX - ĐỨC - BỈ - HÀ LAN </h3></a>
+                        <span class="price_tour_bot">Giá từ:<span class="money">50,990,000  VNĐ</span></span>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+        
+    <div class="lens-bg">
+        <div class="container dimonspl">
+            <div class="lens-tit">
+                <span>Góc</span>
+                <span>ảnh</span>
+                <span>lữ</span>
+                <span>hành</span>
+            </div>
+            <div class="dimonbig">
+                <a href="@Url.Action("chitietTour","Home",new {id=66})">
+                    <img  alt="Paris rực rỡ trong mùa xuân" class="lazy" src="https://dulichsp.com/storage/tours/3-tour-du-lich-nhat-ban.jpg"><span>Paris rực rỡ trong mùa xuân</span>
+                </a>
+            </div><div class="diamond dimon1">
+                <a href="@Url.Action("chitietTour","Home",new {id=53})"><img  alt="daobali" class="lazy" src="https://i.pinimg.com/736x/71/71/65/7171656c517059f7646278eee13df31e--th%C3%A1i-lan-thongs.jpg"><span>Thiên đường tình yêu</span></a>
+            </div><div class="diamond dimon2">
+                <a href="@Url.Action("chitietTour","Home",new {id=40})">
+                    <img  alt="thacbangioc" class="lazy" src="https://hagiangsensetravel.com/nview/at_ve-dep-hung-vi-thac-ban-gioc-mua-nuoc-do_17d5b545dc89730632bec2e2658b4066.jpg">
+                    <span>Thác nước hùng vĩ nhất Việt Nam </span>
+                </a>
+            </div>
+            <div class="diamond dimon3"><a href="#">
+                <img  alt="Montréal – vẻ đẹp đầy mê hoặc" class="lazy" src="https://www.fiditour.com/Upload/images2016/images/GocAnh/VeDepMeHoacMontreal01.jpg">
+                <span>Montréal – vẻ đẹp đầy mê hoặc</span></a></div><div class="diamond dimon4">
+                <a href="@Url.Action("chitietTour","Home",new {id=38})">
+                    <img  alt="hongkong" class="lazy" src="http://anhnendep.net/wp-content/uploads/2018/10/hinh-nen-hong-kong-1-dep-09.jpg"><span>Hollywood của phương Đông</span>
+                </a>
+            </div><div class="diamond dimon5">
+                <a href="@Url.Action("chitietTour","Home",new {id=67})">
+                    <img alt="cotran" class="lazy" src="http://pystravel.vn/wp-content/uploads/2017/04/phuong-hoang-co-tran-pys-travel010.jpg">
+                    <span>Thị trấn cổ 1000 năm</span>
+                </a>
+            </div>
+            <div class="diamond dimon6">
+            <a href="#"><img data-src="https://www.fiditour.com/Upload/images/demo/langco.jpg" alt="Thong dong ở làng cổ Bukchon" class="lazy" src="https://www.fiditour.com/Upload/images/demo/langco.jpg"><span>Thong dong ở làng cổ Bukchon</span></a></div>
+            <div class="diamond dimon7">
+            <a href="@Url.Action("chitietTour","Home",new {id=45})">
+                <img  alt="phuyen" class="lazy" src="https://dulichcanhdieu.com.vn/wp-content/uploads/bai-mon-phu-yen.jpg"><span>Cắt trắng nắng vàng</span></a></div>
+        </div>
+    </div>
+
+
+
+
+
+    <h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">DICH VỤ DU LỊCH</span></h2>
+    <div class="clearfix clearfix-10#"></div>
+    <div class="list_service_home">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-6 col-480-12">
+                <div class="box_service_home">
+                    <a href="@Url.Action("tXe","thongtinxe")" class="img_service_home h_707">
+                        <img class="w_100" src="~/resource/upload/img/dv12.jpg" alt="CHO THUÊ XE DU LỊCH" style="height: 197.96px;">
+                    </a>
+
+                    <div class="clearfix"></div>
+                    <h3 class="name_service_home"><a href="#">CHO THUÊ XE DU LỊCH</a></h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 col-480-12">
+                <div class="box_service_home">
+                    <a href="@Url.Action("khacsans","KhachSan")" class="img_service_home h_707">
+                        <img class="w_100" src="~/resource/upload/img/dv22.jpg" alt="KHÁCH SẠN - ĂN UỐNG" style="height: 197.96px;">
+                    </a>
+
+                    <div class="clearfix"></div>
+                    <h3 class="name_service_home"><a href="@Url.Action("khacsans","KhachSan")">KHÁCH SẠN - ĂN UỐNG</a></h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 col-480-12">
+                <div class="box_service_home">
+                    <a href="@Url.Action("maybay","Mbay")" class="img_service_home h_707">
+                        <img class="w_100" src="~/resource/upload/img/Ve_may_bay_Vietjet_Air.png" alt="VÉ MÁY BAY" style="height: 197.96px;">
+                    </a>
+
+                    <div class="clearfix"></div>
+                    <h3 class="name_service_home"><a href="http://viettour.com.vn/dat-ve-may-bay">VÉ MÁY BAY</a></h3>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-6 col-480-12">
+                <div class="box_service_home">
+                    <a href="#" class="img_service_home h_707">
+                        <img class="w_100" src="~/resource/upload/img/dv42.jpg" alt="HỘ CHIẾU - VISA" style="height: 197.96px;">
+                    </a>
+
+                    <div class="clearfix"></div>
+                    <h3 class="name_service_home"><a href="#">HỘ CHIẾU - VISA</a></h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+}
+<script type="text/javascript">
+    
+        var myobj = document.getElementById("demo");
+        myobj.remove();
+    
+</script>
+
+

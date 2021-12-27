@@ -1,0 +1,80 @@
+﻿@model WebsiteRapChieuPhim.Models.NewsXe
+
+@{
+    ViewBag.Title = "DeleteTourTNNN";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+
+    #father {
+        width: 300px;
+        height: 200px;
+        overflow: auto;
+    }
+</style>
+<h2>DeleteTourTNNN</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>NewsXe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.loaixe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loaixe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuyenxe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuyenxe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dongia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rage)
+        </dt>
+
+        <dd>
+            <div id="father"> @Html.DisplayFor(model => model.rage)</div>
+</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.desctipt)
+        </dt>
+
+        <dd>
+            <div id="father">  @Html.DisplayFor(model => model.desctipt)</div>
+</dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

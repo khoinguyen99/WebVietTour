@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebsiteRapChieuPhim.Models.TinTuc>
+
+@{
+    ViewBag.Title = "tinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+
+    .des_news_cate {
+        line-height: 18px;
+        text-align: justify;
+        margin-bottom: 5px;
+        max-height: 72px;
+        overflow: hidden;
+    }
+</style>
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">TIN TỨC</span></h2>
+@foreach (var item in Model)
+{<div class="list_news_cate">
+
+        <div class="box_news_cate">
+            @{
+                string imagePath = "~/resource/upload/images/" + item.image;
+
+            }
+            <a href="" class="img_news_cate"><img class="w_100" src="@Url.Content(imagePath)" alt="Lễ hội"></a>
+            <div class="sub_news_cate">
+                <h3 class="name_news_cate"><a href="">@Html.DisplayFor(modelItem => item.title)</a></h3>
+                <div class="clearfix"></div>
+                <div class="des_news_cate">
+                    @Html.DisplayFor(modelItem => item.content)
+                </div>
+                <div class="date_news_cate">
+                    <a href="@Url.Action("chitietTinTuc","TinTucss",new {id=@item.id})">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}@*?des=@item.id*@
+
+
+

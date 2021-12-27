@@ -1,0 +1,89 @@
+﻿@model WebsiteRapChieuPhim.Models.DatPhongss
+
+@{
+    ViewBag.Title = "CreatePhong";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h2 style="text-align:center">@ViewBag.ks</h2>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ten, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ten, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.tens, @disabled = true } })
+            @Html.ValidationMessageFor(model => model.ten, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.diachi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.diachi, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.diachis, @disabled = true } })
+            @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.emails, @disabled = true } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.dienthoai, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.dienthoai, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.phones, @disabled = true } })
+            @Html.ValidationMessageFor(model => model.dienthoai, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.tenkhachsan, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.ks, @type = "hidden" } })
+            @Html.ValidationMessageFor(model => model.tenkhachsan, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style="display:inline">
+            <input type="submit" value="Xác Nhận" class="btn btn-default" />
+            <input type="button" value="Edit" class="btn btn-default" onclick="change()" />
+        </div>
+
+
+
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Quay Lại Khách Sạn", "khacsans","KhachSan")
+</div>
+
+
+<script type="text/javascript">
+    var tens = document.getElementById('ten');
+    var diachis = document.getElementById('diachi');
+    var emails = document.getElementById('email');
+    var dienthoais = document.getElementById('dienthoai');
+    
+    function change() {
+        tens.disabled = false;
+        diachis.disabled = false;
+        emails.disabled = false;
+        dienthoais.disabled = false;
+
+    }
+</script>

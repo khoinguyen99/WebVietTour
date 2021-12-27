@@ -1,0 +1,69 @@
+﻿@model WebsiteRapChieuPhim.Models.TinTuc
+
+@{
+    ViewBag.Title = "CreateTinTuc";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    p{
+        margin-left:15px;
+        color:brown;
+        font-size:30px;
+    }
+</style>
+<h2 style="width:100%;text-align:center">Create Tin Tức</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <p>Title</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Content</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Description</p>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.descrip, new {@id="txtarea"})
+                @Html.ValidationMessageFor(model => model.descrip, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <p>Image</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.image, new { htmlAttributes = new { @type = "file", @id = "file", @onchange = "loadFile(event)" } })
+
+                @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+                <p><img id="output" width="200" /></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "qlTinTuc")
+</div>
+

@@ -1,0 +1,128 @@
+﻿@using WebsiteRapChieuPhim.Models
+@{
+    ViewBag.Title = "diemdens";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string keys = Request.QueryString["keys"];
+    string key = Request.QueryString["key"];
+    List<DatTour> result = new List<DatTour>();
+}
+
+<style>
+    p {
+        font-family: arial;
+        font-size: 13px;
+        color: #333;
+    }
+
+    .md-6 {
+        width: 45%;
+        float: left;
+    }
+
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+</style>
+
+
+@{
+    
+        if (string.IsNullOrEmpty(key))
+        {
+            <h3>vui long nhập từ khóa</h3>
+        }
+        else
+        {
+            if (key == "" || key.Length < 3)
+            {
+                <h3>vui long nhập từ khóa</h3>
+            }
+            else
+            {
+                result = new datTTour().ddtimkiem(key);
+               <table class="table" style="margin-top:15px">
+                    @foreach (var item in result)
+                    {
+
+                        <tr>
+                            <td colspan="2">
+                                <b>@Html.DisplayFor(modelItem => item.tentour)</b>
+
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td rowspan="6">
+
+                                @{
+                                    string imagePath = "~/resource/upload/images/" + item.thumnail;
+                                }
+
+                                <div class="img-container">
+
+                                    <img alt="cc" src="@Url.Content(imagePath)" class="img-thumbnail" style="width:650px;height:200px" />
+                                    <div class="sale_tour_km">
+                                        Giảm @Html.DisplayFor(modelItem => item.khuyenmai)%
+                                    </div>
+                                </div>
+
+
+                            </td>
+                            <td><b>Khởi hành từ : </b>@Html.DisplayFor(modelItem => item.khoihanhtu)</td>
+                        </tr>
+                        <tr>
+
+                            <td><b>Thời gian : </b> @Html.DisplayFor(modelItem => item.thoigian)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Giá Tour : </b>@Html.DisplayFor(modelItem => item.gia) VNĐ</td>
+                        </tr>
+                        <tr>
+
+                            <td><b>Khởi hành ngày : </b> @Html.DisplayFor(modelItem => item.khoihanhngay)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Giới thiệu Tour : </b> @Html.DisplayFor(modelItem => item.gioithieutour)</td>
+
+                        </tr>
+
+                        <tr>
+                            <td align="right">
+                                @{
+                                    Session["tentour"] = item.tentour;
+
+                                }
+                                <button style="margin-right:3px" class="btn btn-danger"><a href="/home/dattours?name=@item.tentour&hh=@item.id" class="menu-link ">Đặt Tour</a></button>
+                                <button class="btn btn-success">
+                                    <a href="@Url.Action("chitietTour","Home",new {id=@item.id})" class="menu-link ">Xem Tiếp</a>
+                                </button>
+
+
+                            </td>
+                        </tr>
+
+
+                    }
+                </table> 
+            }
+        }
+    
+
+}
+

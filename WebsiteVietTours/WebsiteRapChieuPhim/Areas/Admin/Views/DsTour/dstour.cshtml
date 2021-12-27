@@ -1,0 +1,121 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.DatTour>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "dstour";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    #father {
+        width: 300px;
+        height: 200px;
+        overflow: auto;
+    }
+</style>
+<h2 align="center" style="width:100%">Danh sách Tour KM</h2>
+<hr />
+<p style="margin-left:15px;">
+    @Html.ActionLink("Create New", "CreateTourKM", "DsTour")
+</p>
+<table class="table">
+    <thead>
+        <tr style="text-align:center ;color:brown">
+            <th>
+                Khởi hành từ
+            </th>
+            <th>
+                Thời gian
+            </th>
+            <th>
+                Khởi hành ngày
+            </th>
+            <th>
+                Giới thiệu Tour
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Chương trình Tour
+            </th>
+            <th>
+                Khuyến Mãi
+            </th>
+            <th>
+                Điểm đến Id
+            </th>
+            <th>
+                Giá Tour
+            </th>
+            <th>
+                Tên Tour
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.khoihanhtu)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.thoigian)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.khoihanhngay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gioithieutour)
+                </td>
+                <td>
+                    @*@{
+                        string imagePath = "~/resource/upload/images/" + item.thumnail;
+                    }
+
+                   
+
+                        <img alt="cc" src="@Url.Content(imagePath)" class="img-thumbnail" style="width:50px;height:px" />*@
+                      
+                    @Html.DisplayFor(modelItem => item.thumnail)
+                </td>
+
+                <td>
+                    <div id="father">@Html.DisplayFor(modelItem => item.chuongtrinhtour)</div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.khuyenmai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diemdenid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tentour)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditTourKM", new { id = item.id })
+                    @Html.ActionLink("Details", "DetailsTourKM", new { id = item.id })
+                    @Html.ActionLink("Delete", "DeleteTourKM", new { id = item.id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+<div>@Html.PagedListPager(Model, page => Url.Action("dstour", new { page }))</div>
+
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toString().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

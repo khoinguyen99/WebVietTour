@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebsiteRapChieuPhim.Models.thongTinTour>
+
+@{
+    ViewBag.Title = "tourDaDat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">TOUR ĐÃ ĐẶT</span></h2>
+
+
+
+<form method="post" action="#" name="myform">
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.hoten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diachi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dienthoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.khoihanhngay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tongsokhach)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tentours)
+        </th>
+        <th></th>
+    </tr>
+   
+    @foreach (var item in Model)
+    {
+       
+        <tr id="row_@item.id">
+
+            <td>
+                @Html.DisplayFor(modelItem => item.hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diachi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dienthoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.khoihanhngay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tongsokhach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tentours)
+            </td>
+            <td width="115px">
+               
+                @*<div style="background-color:blue;padding:2px;text-align:center;border-radius:10px"><a href="@Url.Action("chitietTour","Home",new {@id = 13})" class="menu-link ">Xem Chi Tiết</a></div><br />*@
+               <div style="background-color:yellow;padding:2px;text-align:center;border-radius:10px">@Ajax.ActionLink("Hủy", "xoaodertour",new {@id = item.id}, new AjaxOptions
+           {
+               Confirm = "Bạn có muốn xóa tour này không ?",
+               OnComplete = "$('#row_"+@item.id+"').remove()",
+               HttpMethod = "xoaodertour"
+           })
+              </div>
+            </td>
+
+        </tr>
+         
+    }
+
+</table>
+<div style="background-color:aqua;padding:2px;text-align:center;border-radius:10px;width:100px"> @Html.ActionLink("Back to Tour", "TuorKhuyenMai", "Home")</div>
+</form>
+
+
+

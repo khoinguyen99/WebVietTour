@@ -1,0 +1,127 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.admin>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "qlTaiKhoan";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+
+
+
+<style>
+
+    .pages {
+        display: inline-block;
+        background-color: aqua;
+    }
+
+    .desin {
+        position: relative;
+        float: left;
+        padding: 6px 12px;
+        margin-left: -1px;
+        line-height: 1.42857143;
+        color: #337ab7;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+    }
+
+    ul li {
+        display: block;
+        background: #333;
+    }
+</style>
+<h2 style="width:100%;text-align:center">QUẢN LÝ TÀI KHOẢN</h2>
+
+<br />
+@Html.ActionLink("Thêm", "Create", "qlTaiKhoan")
+<br />
+<table class="table">
+    <thead>
+        <tr >
+            <th>
+                Name
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                    Status
+                </th>
+                <th>
+                    IsAdmin
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th></th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isAdmin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone)
+                    </td>
+                    <td>
+
+                        @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Xóa", "Delete", new { id = item.Id })|
+                        @Html.ActionLink("Chi Tiết", "Details", new { id = item.Id })
+                    </td>
+                </tr>
+
+
+            }
+        
+    </tbody>
+</table>
+
+
+
+<div>@Html.PagedListPager(Model, page => Url.Action("qlTaiKhoan", new { page }))</div>
+
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toString().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

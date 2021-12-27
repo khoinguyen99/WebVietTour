@@ -1,0 +1,74 @@
+﻿@model WebsiteRapChieuPhim.Models.NewsXe
+
+@{
+    ViewBag.Title = "DetailsTourTNNN";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+
+    #father {
+        width: 300px;
+        height: 200px;
+        overflow: auto;
+    }
+</style>
+<h2>DetailsTourTNNN</h2>
+
+<div>
+    <h4>NewsXe</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.loaixe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loaixe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tuyenxe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tuyenxe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dongia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dongia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rage)
+        </dt>
+
+        <dd>
+            <div id="father">@Html.DisplayFor(model => model.rage)</div>
+        </dd>
+
+        <dt>
+            <div id="father"> @Html.DisplayNameFor(model => model.desctipt)</div>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.desctipt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

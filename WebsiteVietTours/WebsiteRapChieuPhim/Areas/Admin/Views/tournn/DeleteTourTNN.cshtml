@@ -1,0 +1,105 @@
+﻿@model WebsiteRapChieuPhim.Models.TourNuocNgoai
+
+@{
+    ViewBag.Title = "DeleteTourTNN";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+
+<h2>DeleteTourTNN</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TourNuocNgoai</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.khoihanhtu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khoihanhtu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thoigian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thoigian)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khoihanhngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khoihanhngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gioithieutour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gioithieutour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thumnail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thumnail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chuongtrinhtour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chuongtrinhtour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khuyenmai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khuyenmai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diemdenid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diemdenid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tentour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tentour)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

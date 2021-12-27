@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebsiteRapChieuPhim.Models.TourTrongNuoc>
+
+@{
+    ViewBag.Title = "tournuocs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>tournuocs</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.khoihanhtu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thoigian)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.khoihanhngay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gioithieutour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.thumnail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chuongtrinhtour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.khuyenmai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diemdenid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tentour)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.khoihanhtu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thoigian)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.khoihanhngay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gioithieutour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.thumnail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chuongtrinhtour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.khuyenmai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diemdenid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tentour)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

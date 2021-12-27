@@ -1,0 +1,79 @@
+﻿@model WebsiteRapChieuPhim.Models.TinTuc
+
+@{
+    ViewBag.Title = "EditTinTuc";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+ <style>
+     p {
+         margin-left: 15px;
+         color: brown;
+         font-size: 25px;
+     }
+ </style>
+<h2 style="width:100%;text-align:center">Edit Tin Tức</h2>
+
+@using (Html.BeginForm("EditTinTuc", "TinTucs", FormMethod.Post, new { @name = "myform" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            <p>Title</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p>Content</p>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    @*<div class="row" style="margin-top:15px">
+            <div class="col-md-12">
+                <textarea class="form-control" rows="15" id="txtarea"></textarea>
+            </div>
+        </div>*@
+    <div class="form-group">
+        <p>Description</p>
+        <div class="col-md-10">
+
+
+            @Html.TextAreaFor(model => model.descrip, new { @class = "form-control", @id = "txtarea" })
+
+            @Html.ValidationMessageFor(model => model.descrip, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <p>Image</p>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.image, new { htmlAttributes = new { @type = "file", @id = "file", @onchange = "loadFile(event)" } })
+
+            @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+            <p><img id="output" width="200" /></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn-bd-primary"/>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "layoutIndex")
+</div>
+

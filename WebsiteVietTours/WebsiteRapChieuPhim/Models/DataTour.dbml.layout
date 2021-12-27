@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.625, 8.5" name="DataPhim">
+  <DataContextMoniker Name="/DataPhimDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4ee47b18-07e1-44ed-9ab7-0edea3b0b866" absoluteBounds="7.25, 3.375, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataPhimDataContext/Tour" />
+      <nestedChildShapes>
+        <elementListCompartment Id="394f492d-0a3f-444e-85ba-34b926a27243" absoluteBounds="7.2650000000000006, 3.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4dcbc405-2d2e-4cc7-a2b3-672cbc1f8424" absoluteBounds="1, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataPhimDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6e135fc-37e6-4470-8574-e1829bc333a1" absoluteBounds="1.0149999999999997, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1ec9590-2484-4514-84a4-618120ed4edc" absoluteBounds="4.125, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DataPhimDataContext/orderTour" />
+      <nestedChildShapes>
+        <elementListCompartment Id="800a68d4-d76c-403f-84e9-86699c7427d6" absoluteBounds="4.14, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aac81152-6b66-4e59-8ac6-09c8397cec1d" absoluteBounds="4.75, 3.375, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DataPhimDataContext/TTrongNuoc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9616261a-7c84-4ef9-8288-7d1cec7f5731" absoluteBounds="4.7650000000000006, 3.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c081dacf-dd6e-4596-8f5e-69a15d552dab" absoluteBounds="7.125, 0.5, 1.875, 1.9631982421875">
+      <DataClassMoniker Name="/DataPhimDataContext/KhachSan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7fd894c-1b6e-489d-a151-ddc6abfa15e3" absoluteBounds="7.14, 0.96, 1.8450000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30ed3152-044e-422a-9e12-4d4df92331a7" absoluteBounds="0.5, 3.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataPhimDataContext/Newss" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09914c91-190b-428d-900c-2d6403bb19b6" absoluteBounds="0.51499999999999968, 3.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c4ffbe9-b973-4f72-880a-ea6360f3ed61" absoluteBounds="10.375, 2.125, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataPhimDataContext/TNuocNgoai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="020e5233-9d0e-402e-b77c-4544ccf8b943" absoluteBounds="10.39, 2.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1d0987b-abbe-4bdc-9213-67ae6b8e2d5a" absoluteBounds="2.75, 3.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataPhimDataContext/ThongTinXe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="873fd4ea-e13f-4733-9681-e5487610bc68" absoluteBounds="2.7649999999999997, 3.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

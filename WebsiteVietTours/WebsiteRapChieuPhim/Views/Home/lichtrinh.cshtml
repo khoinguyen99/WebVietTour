@@ -1,0 +1,343 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.DatTour>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "lichtrinh";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    p {
+        font-family: arial;
+        font-size: 13px;
+        color: #333;
+    }
+
+    .md-6 {
+        width: 45%;
+        float: left;
+    }
+
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+
+    .ahihi, .ahihi:hover, a, a:hover {
+        text-decoration: none;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+
+    a {
+        color: #333;
+        cursor: pointer;
+    }
+
+    .new-sort-zone {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding: 0px 33px 17px;
+        font-size: 15px;
+    }
+
+        .new-sort-zone a.active, .new-sort-zone a:hover {
+            background: #243a76;
+            color: #fff;
+        }
+
+
+
+
+        .new-sort-zone a {
+            float: left;
+            margin-right: 5px;
+            font-size: 15px;
+            text-transform: uppercase;
+            background: #fff;
+            color: #243a76;
+            position: relative;
+            border: 1px dashed #243a76;
+            padding: 5px 55px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+    a, a:hover {
+        text-decoration: none;
+        -webkit-transition: all .2s ease;
+        -moz-transition: all .2s ease;
+        -o-transition: all .2s ease;
+        transition: all .2s ease;
+    }
+
+    .list-n {
+        margin-top: 15px;
+        padding-right: 15px;
+    }
+
+    .idd {
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+</style>
+
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">LỊCH KHỞI HÀNH TOUR</span></h2>
+
+
+<div class="clearfix"></div>
+<div class="search_content_s">
+    <div class="img_search_s"><img src="http://viettour.com.vn/assets/css/img/search.png" alt=""></div>
+    <form method="get" action="@Url.Action("diemdens","Home")">
+        <div class="right_search_s">
+            <div class="thongtintourhot">
+                <span>
+                    &nbsp;
+                    <span style="color: rgb(0, 51, 102);">Trên <strong>500 tour </strong></span>
+                </span>
+                <a href="">
+                    <span><span style="color: rgb(0, 51, 102);">du lịch trong &amp; </span></span>
+                </a>
+                <span>
+                    <span style="color: rgb(0, 51, 102);">&nbsp;ngoài nước đang có trên website, chọn<strong> </strong></span>
+                </span>
+                <span style="color: rgb(0, 51, 102);">
+                    <strong><a href=""><span>lịch khởi hành</span></a></strong>
+                </span>
+                <span><span style="color: rgb(0, 51, 102);"> để xem chi tiết</span></span>
+            </div>
+            <div class="clearfix"></div>
+            <div id="khoihanh">
+                Khởi hành từ
+                <select name="keys" class="select" id="select2">
+
+                    <option value="60">HÀ NỘI</option>
+                </select>
+            </div>
+            <div id="diemden">
+                đến
+                <label>
+                    <select name="key" class="select">
+                        <option value=" ">Chọn điểm đến</option>
+                        <optgroup label="Trong nước">
+                            <option value="HÀ NỘI">HÀ NỘI &amp; LÂN CẬN</option>
+                            <option value="NHA TRANG">NHA TRANG</option>
+                            <option value="QUẢNG BÌNH">QUẢNG BÌNH</option>
+                            <option value="SAPA &amp; ĐÔNG TÂY BẮC">SAPA &amp; ĐÔNG TÂY BẮC</option>
+                            <option value="HUẾ, ĐÀ NẴNG, HỘI AN">HUẾ, ĐÀ NẴNG, HỘI AN</option>
+                            <option value="ĐÀ LẠT, TÂY NGUYÊN">ĐÀ LẠT, TÂY NGUYÊN</option>
+                            <option value="PHÚ YÊN, QUY NHƠN">PHÚ YÊN, QUY NHƠN</option>
+                            <option value="MŨI NÉ, NHA TRANG">MŨI NÉ, NHA TRANG</option>
+                            <option value="MIỄN TÂY">MIỄN TÂY</option>
+                            <option value="MỘC CHÂU">MỘC CHÂU</option>
+                            <option value="HÀ GIANG">HÀ GIANG</option>
+                            <option value="QUY NHƠN">QUY NHƠN</option>
+                            <option value="CAO BẰNG">CAO BẰNG</option>
+
+                        </optgroup>
+                        <optgroup label="Nước ngoài">
+                            <option value="THÁI LAN">THÁI LAN</option>
+                            <option value="SINGAPORE">SINGAPORE</option>
+                            <option value="HÀN QUỐC">HÀN QUỐC</option>
+                            <option value="NHẬT BẢN">NHẬT BẢN</option>
+                            <option value="MALAYSIA">MALAYSIA</option>
+                            <option value="TRUNG QUỐC">TRUNG QUỐC</option>
+                            <option value="ĐÀI LOAN">ĐÀI LOAN</option>
+                            <option value="HÔNG KÔNG">HÔNG KÔNG</option>
+                            <option value="HOA KỲ">HOA KỲ</option>
+                            <option value="CHÂU ÂU">CHÂU ÂU</option>
+                            <option value="DUBAI">DUBAI</option>
+                            <option value="ÚC">ÚC</option>
+                            <option value="ẤN ĐỘ">ẤN ĐỘ</option>
+                            <option value="BRUNEI">BRUNEI </option>
+                            <option value="CAMPUCHIA">CAMPUCHIA</option>
+                            <option value="INDONESIA">INDONESIA</option>
+                            <option value="LÀO">LÀO</option>
+                            <option value="MYANMAR">MYANMAR</option>
+                            <option value="MALDIVES">MALDIVES</option>
+                            <option value="HAWAII">HAWAII</option>
+                            <option value="NAM PHI">NAM PHI</option>
+                            <option value="NGA">NGA</option>
+                            <option value="PHILIPPINES">PHILIPPINES</option>
+                            <option value="DU LỊCH CHỮA BỆNH">DU LỊCH CHỮA BỆNH</option>
+                            <option value="CANADA">CANADA</option>
+                            <option value="TRIỀU TIÊN">TRIỀU TIÊN</option>
+                            <option value="PHƯỢNG HOÀNG CỔ TRẤN">PHƯỢNG HOÀNG CỔ TRẤN</option>
+                            <option value="LỆ GIANG">LỆ GIANG</option>
+                            <option value="BẮC KINH - THƯỢNG HẢI - HÀNG CHÂU - TÔ CHÂU">BẮC KINH - THƯỢNG HẢI - HÀNG CHÂU - TÔ CHÂU</option>
+                        </optgroup>
+                    </select>
+                </label>
+                <input type="submit" class="tim_home" value="&nbsp;">
+            </div>
+        </div>
+    </form>
+</div>
+<div class="clearfix" style="margin-bottom: 20px"></div>
+<div class="row">
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+
+        <a href="@Url.Action("lichtrinh","Home")" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img style="padding: 15px 40px" width="100%" height="100" src="~/resource/upload/unnamed1.png" class="vc_single_image-img attachment-full" alt="asdas"></div></a>
+
+
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="md-6" style="margin-right: 15px">
+            <a href="@Url.Action("tournuocngoai","TourNuocNgoai")" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img width="100%" height="100" src="~/resource/upload/unnamed2.jpg" class="vc_single_image-img attachment-full" alt="asdas"></div></a>
+        </div>
+        <div class="md-6">
+            <a href="@Url.Action("tournuoc","TourTrongNuocs")" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img width="100%" height="100" src="~/resource/upload/unnamed3.jpg" class="vc_single_image-img attachment-full" alt="asdas"></div></a>
+        </div>
+
+    </div>
+
+
+</div>
+<style>
+    .alt {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    tr {
+        padding: 10px;
+        padding-bottom: 15px;
+    }
+</style>
+<div class="list_tour_cate boxtour ">
+    <table width="100%">
+        <tbody>
+
+            <tr class="alt" style="text-align:center;background: #E8E8FF;">
+                <th>STT</th>
+                <th>Tên tour</th>
+                <th width="11%">Thời gian</th>
+                <th width="10%">Giá tour <span style="font-size:11px;">(VNĐ/Khách)</span></th>
+                <th width="10%">Giá khuyến mãi <span style="font-size:11px;">(VNĐ/Khách)</span></th>
+                <th width="10%">Khởi hành</th>
+                <th width="10%">Khởi hành từ</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+
+
+                if (item.id % 2 == 0)
+                {
+
+
+                    <tr style="background: #E8E8FF;">
+                        <td align="center">@item.id</td>
+                        <td>
+                            <a href="@Url.Action("chitietTour", "Home", new { id = @item.id })" title="@Html.DisplayFor(modelItem => item.tentour)">@Html.DisplayFor(modelItem => item.tentour)</a>
+
+                        </td>
+                        <td align="center">@Html.DisplayFor(modelItem => item.thoigian)</td>
+                        <td align="center">
+                            @String.Format("{0:#,##0.##}", Convert.ToDouble(item.gia.ToString())) VNĐ
+                        </td>
+                        @{
+
+
+                            string str1 = item.gia;
+
+
+                            double x = Convert.ToDouble(str1);
+                            double y = Convert.ToDouble(item.khuyenmai);
+                            double strs = x * (100 - y) / 100;
+
+                        }
+                        <td align="center" style="margin-bottom:3px" class="gia">@String.Format("{0:#,##0.##}", strs) VNĐ</td>
+                        <td align="center"> @Html.DisplayFor(modelItem => item.khoihanhngay)</td>
+                        <td align="center">@Html.DisplayFor(modelItem => item.khoihanhtu)</td>
+                        <td align="center">
+                            <form action="#" method="POST">
+
+
+                                <button class="oder_tour_cate" type="submit"><a href="/home/dattours?name=@item.tentour&hh=@item.id" class="menu-link ">Đặt Tour</a></button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td align="center">@item.id</td>
+                        <td>
+                            <a href="@Url.Action("chitietTour", "Home", new { id = @item.id })" title="@Html.DisplayFor(modelItem => item.tentour)">@Html.DisplayFor(modelItem => item.tentour)</a>
+
+                        </td>
+                        <td align="center">@Html.DisplayFor(modelItem => item.thoigian)</td>
+                        <td align="center">
+                            @String.Format("{0:#,##0.##}", Convert.ToDouble(item.gia.ToString())) VNĐ
+                        </td>
+                        @{
+
+
+                            string str1 = item.gia;
+
+
+                            double x = Convert.ToDouble(str1);
+                            double y = Convert.ToDouble(item.khuyenmai);
+                            double strs = x * (100 - y) / 100;
+
+                        }
+                        <td align="center" class="gia">@String.Format("{0:#,##0.##}", strs) VNĐ</td>
+                        <td align="center"> @Html.DisplayFor(modelItem => item.khoihanhngay)</td>
+                        <td align="center">@Html.DisplayFor(modelItem => item.khoihanhtu)</td>
+                        <td align="center">
+                            <form action="#" method="POST">
+
+
+                                <button class="oder_tour_cate" type="submit"><a href="/home/dattours?name=@item.tentour&hh=@item.id" class="menu-link ">Đặt Tour</a></button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+
+
+            }
+
+
+        </tbody>
+    </table>
+</div>
+
+
+<div align="right" style="width: 100%">
+    @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount*@
+    @Html.PagedListPager(Model, page => Url.Action("lichtrinh", new { page }))
+</div>

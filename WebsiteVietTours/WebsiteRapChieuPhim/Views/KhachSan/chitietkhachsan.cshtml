@@ -1,0 +1,96 @@
+﻿@model WebsiteRapChieuPhim.Models.khachsanss
+
+@{
+    ViewBag.Title = "chitietkhachsan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+</style>
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">@Html.DisplayFor(modelItem => Model.tenkhachsan)</span></h2>
+
+
+<table class="table box_hotel_cate">
+
+    <tr>
+        <td rowspan="5" style="align-content:flex-start">
+
+            @{
+                string imagePath = "~/resource/upload/img/hotels/" + Model.image;
+            }
+
+            <div class="img-container">
+
+                <img alt="cc" src="@Url.Content(imagePath)" class="img-thumbnail" style="width:500px;height:200px" />
+
+            </div>
+        </td>
+        <td style="text-align:left"> <b style="color:red">@Html.DisplayFor(modelItem => Model.tenkhachsan)</b></td>
+        <td rowspan="5">
+            <div style="width:100%">
+                <div class="clearfix clearfix-45"></div>
+                <p>Giá tham khảo</p>
+                <b style="font-size:20px;color:red">@Model.gia VNĐ</b>
+
+            </div>
+
+            <div style="width:100%">
+
+                <a href="@Url.Action("chitietkhachsan","KhachSan",new {id =Model.id})" style="text-align:center" class="view_hotel_cate">xem chi tiết</a>
+                <div class="clearfix clearfix-40"></div>
+            </div>
+
+
+        </td>
+
+    </tr>
+    <tr>
+
+        <td>@Html.Raw(Model.rate)</td>
+
+
+    </tr>
+    <tr>
+
+        <td><b>Địa Chỉ : @Html.DisplayFor(modelItem => Model.gia)</b></td>
+
+    </tr>
+    <tr>
+
+        <td><b>Loại phòng : @Html.DisplayFor(modelItem => Model.loaiphong)</b></td>
+
+    </tr>
+    <tr>
+
+        <td><b>Số người : @Html.DisplayFor(modelItem => Model.songuoi)</b></td>
+
+    </tr>
+
+
+</table>
+
+@{
+    string str = Model.desctipt;
+    string re = str.Replace("http://viettour.com.vn/upload/img/hotels/20052017", "/resource/upload/img/hotels");
+
+    
+}
+@Html.Raw(re.ToString())
+

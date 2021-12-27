@@ -1,0 +1,287 @@
+﻿@model WebsiteRapChieuPhim.Models.thongTinTour
+
+@{
+    ViewBag.Title = "DatTours";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .ng_lon {
+        background: url('../../resource/upload/images/down-arrow (1).png') 95% no-repeat #fff;
+        background-size: 12px 12px;
+        color: #000;
+        font-size: 15px;
+        appearance: none;
+        height: 45px;
+        border: 1px solid #a1b1bc;
+        color: #818181;
+        padding-left: 4%;
+        width: 125px;
+        margin-bottom: 10px !important;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    .tr_em {
+        background: url('../../resource/upload/images/down-arrow (1).png') 95% no-repeat #fff;
+        background-size: 12px 12px;
+        color: #000;
+        font-size: 15px;
+        appearance: none;
+        height: 45px;
+        border: 1px solid #a1b1bc;
+        color: #818181;
+        padding-left: 4%;
+        width: 125px;
+        margin-bottom: 10px !important;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+</style>
+<link rel="stylesheet" href="~/Content/Site.css">
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">Đặt tour</span></h2>
+<br />
+@{
+    if (Session["user"] == null)
+    {
+        using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+
+                @Request["name"].ToString()
+                <br />
+                <br />
+                <b style="font-size:15px">THÔNG TIN KHÁCH HÀNG</b>
+                <hr />
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.hoten, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.hoten, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.hoten, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.diachi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.diachi, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.dienthoai, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dienthoai, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.dienthoai, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <b style="font-size:15px">THÔNG TIN TOUR</b>
+                <br />
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.khoihanhngay, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.khoihanhngay, new { htmlAttributes = new { @class = "form-control", @type = "Date" } })
+
+                        @Html.ValidationMessageFor(model => model.khoihanhngay, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tongsokhach, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.tongsokhach, "", new { @class = "text-danger" })
+                    <div class="col-md-10">
+
+                        @*@{
+                                List<SelectListItem> listItems = new List<SelectListItem>();
+                                List<SelectListItem> listt = new List<SelectListItem>();
+                                List<SelectListItem> tong = new List<SelectListItem>();
+                                listItems.Add(new SelectListItem
+                                {
+                                    Text = "Người lớn"
+                                });
+                                listt.Add(new SelectListItem
+                                {
+                                    Text = "Trẻ em"
+                                });
+                                for (int i = 1; i <= 50; i++)
+                                {
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = i + ""
+                                    });
+                                    for (int j = 1; j <= 50; j++)
+                                    {
+                                        listt.Add(new SelectListItem
+                                        {
+                                            Text = j + ""
+                                        });
+                                    }
+                                }
+                            }*@
+                        @Html.EditorFor(model => model.tongsokhach, new { htmlAttributes = new { @class = "form-control" } })
+
+
+
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.note, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @Html.TextAreaFor(model => model.note, new { htmlAttributes =  new {@style="width:200px;height:300px" } })
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-paper-plane-o"></i>&nbsp;Đặt Tour</button><p style="color:darkred">@ViewBag.erro</p>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        }
+
+    }
+    else
+    {
+        using(Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <p><a href="/Home/tourDaDat"><b style="font-size:15px ;color:red">THÔNG TIN TOUR ĐÃ ĐẶT</b></a></p>
+            <div class="form-horizontal" style="width:100%">
+                <hr />
+                <p>@ViewBag.tenss</p>
+                @Request["name"].ToString()
+
+                <br />
+                <br />
+                <b style="font-size:15px">THÔNG TIN KHÁCH HÀNG</b>
+                <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.tentours, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <div class="col-md-10">
+
+                        
+                        
+                        @Html.EditorFor(model => model.tentours, new { htmlAttributes = new {@class = "form-control" ,@Value = @Request["name"].ToString().Trim(),@type="hidden" } })
+                        @*@Html.ValidationMessageFor(model => model.hoten, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.hoten, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.hoten, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.hoten, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.diachi, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.diachi, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control", @*@pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$",@type="email"*@} })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.dienthoai, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.dienthoai, new { htmlAttributes = new { @class = "form-control" , @pattern = "[0-9]{9}" } })
+                        @Html.ValidationMessageFor(model => model.dienthoai, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+                <b style="font-size:15px">THÔNG TIN TOUR</b>
+                <br />
+                <hr />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.khoihanhngay, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.khoihanhngay, new { htmlAttributes = new { @class = "form-control", @type = "Date" } })
+
+                        @Html.ValidationMessageFor(model => model.khoihanhngay, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+              
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.tongsokhach, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.tongsokhach, "", new { @class = "text-danger" })
+                    <div class="col-md-10">
+
+           
+
+                                @Html.EditorFor(model => model.tongsokhach, new { htmlAttributes = new { @class = "form-control" } })                         
+                    </div>
+                </div>
+                <br />
+                <br />
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.note, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+
+                        @Html.TextAreaFor(model => model.note, new { HtmlString = new { @class = "md-textarea form-control" } })
+
+                    </div>
+                    
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-paper-plane-o"></i>&nbsp;Đặt Tour</button><p style="color:darkred">@ViewBag.erro</p>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        }
+    }
+}
+
+
+
+
+
+
+

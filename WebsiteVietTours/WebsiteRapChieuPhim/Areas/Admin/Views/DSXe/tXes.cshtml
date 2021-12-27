@@ -1,0 +1,77 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.NewsXe>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "tXe";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    #father {
+        width: 300px;
+        height: 200px;
+        overflow: auto;
+    }
+
+    th {
+        color: brown;
+        text-align: center;
+    }
+</style>
+<h2 style="width:100%;text-align:center">DANH SÁCH XE</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTourTNNN")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Loại Xe
+        </th>
+        <th>
+            Tuyến Xe
+        </th>
+        <th>
+           Đơn giá
+        </th>
+        <th>
+           Image
+        </th>
+        <th>
+           RageScript
+        </th>
+        <th>
+          Desciption
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.loaixe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tuyenxe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dongia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.image)
+            </td>
+            <td>
+                <div id="father"> @Html.DisplayFor(modelItem => item.rage)</div>
+            </td>
+            <td>
+                <div id="father"> @Html.DisplayFor(modelItem => item.desctipt)</div>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTourTNNN", new { id = item.id })
+                @Html.ActionLink("Details", "DetailsTourTNNN", new { id = item.id }) 
+                @Html.ActionLink("Delete", "DeleteTourTNNN", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.PagedListPager(Model, page => Url.Action("tXes", new { page }))</div>

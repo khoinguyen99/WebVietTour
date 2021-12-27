@@ -1,0 +1,98 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.TourTrongNuoc>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "dstourtnuoc";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    #father {
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+    }
+    
+    
+</style>
+<h2 align="center" style="width:100%">Danh sách Tour Trong Nước</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateTourTN")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Khởi hành từ
+        </th>
+        <th>
+            Thời gian
+        </th>
+        <th>
+            Khời hành ngày
+        </th>
+        <th>
+            Giới thiệu Tour
+        </th>
+        <th>
+            Thumbnail
+        </th>
+        <th>
+            Chương trình Tour
+        </th>
+        <th>
+           Khuyến Mãi
+        </th>
+        <th>
+            Điểm đến id
+        </th>
+        <th>
+           Giá
+        </th>
+        <th>
+          Tên Tour
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.khoihanhtu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.thoigian)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.khoihanhngay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gioithieutour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.thumnail)
+            </td>
+            <td>
+                <div id="father">@Html.DisplayFor(modelItem => item.chuongtrinhtour)</div>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.khuyenmai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diemdenid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tentour)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditTourTN", new { id = item.id }) 
+                @Html.ActionLink("Details", "DetailsTourTN", new { id = item.id }) 
+                @Html.ActionLink("Delete", "DeleteTourTN", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>@Html.PagedListPager(Model, page => Url.Action("dstourtnuoc", new { page,@class="imgs" }))</div>

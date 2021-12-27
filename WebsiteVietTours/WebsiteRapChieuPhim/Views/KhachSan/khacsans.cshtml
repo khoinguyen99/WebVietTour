@@ -1,0 +1,257 @@
+﻿@model PagedList.IPagedList<WebsiteRapChieuPhim.Models.khachsanss>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "khacsans";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<style>
+    .img-container {
+        border: 1px solid #CCC;
+        height: auto; /** Chiều cao tự động **/
+        margin: 5px auto; /** Cách trên dưới 10px và nằm giữa **/
+        overflow: hidden; /** DÒNG BẮT BUỘC CÓ **/
+        position: relative;
+        width: 300px; /** Chiều rộng vùng chứa **/
+    }
+
+        .img-container img {
+            width: 100%; /** Hình ảnh rộng 100% so với vùng chứa **/
+            transition: all 1s; /** Tạo độ mượt **/
+        }
+
+        .img-container:hover img {
+            -webkit-transform: scale(1.2);
+            transform: scale3d();
+        }
+
+    .modal {
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal-body {
+        margin-left: 40%;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        text-align: center;
+        width: 500px;
+        height: 500px;
+        background: #f5f5f5;
+        border-radius: 6px;
+    }
+
+    .booktour-form {
+        position: relative;
+        padding: 15px 15px 15px 15px;
+        background: #f5f5f5;
+    }
+
+    #close {
+        position: absolute;
+        right: 15px;
+        top: 0;
+        color: red;
+        font-size: 25px;
+        font-weight: bold;
+        
+    }
+
+        #close:hover,
+        #close:focus {
+            color: red;
+            cursor: pointer;
+        }
+</style>
+<h2 class="tit_home" style="text-align:left"><span class="txt_tit_home">KHÁCH SẠN - ĂN UỐNG</span></h2>
+
+
+@foreach (var item in Model)
+{
+    <table class="table box_hotel_cate">
+
+        <tr style="text-align:right">
+            <td rowspan="5">
+
+                @{
+                    string imagePath = "~/resource/upload/img/hotels/" + item.image;
+                }
+
+                <div class="img-container">
+
+                    <img alt="cc" src="@Url.Content(imagePath)" class="img-thumbnail" style="width:500px;height:200px" />
+
+                </div>
+            </td>
+            <td> <b style="color:red">@Html.DisplayFor(modelItem => item.tenkhachsan)</b></td>
+            <td rowspan="5">
+                <div style="width:100%">
+                    <div class="clearfix clearfix-45"></div>
+                    <p>Giá tham khảo</p>
+                    <b style="font-size:20px;color:red">@item.gia VNĐ</b>
+
+                </div>
+
+                <div style="width:100%">
+
+                    <a href="@Url.Action("chitietkhachsan","KhachSan",new {id =item.id})" style="text-align:center" class="view_hotel_cate">xem chi tiết</a>
+
+
+                </div>
+                <button type="button" class="booking_hotel_cate" onclick="document.getElementById('@item.id').style.display='block'">Đặt phòng</button>
+
+                <div id="@item.id" class="modal">
+
+
+                    <div class="modal-body">
+
+
+                        <div class="booktour-form">
+
+                            <div class="cc">
+                                <h2 class="name_tour_book">@Html.DisplayFor(modelItem => item.tenkhachsan)</h2>
+
+                                <div class="clearfix"></div>
+                                <div class="vc_row-fluid">
+                                    <div class="note"></div>
+                                    <h2 style="text-align:center">Thông tin khách hàng</h2>
+                                    <form method="post" action="/DatPhongs/CreatePhong" name="myform">
+                                        <input type="hidden"  name ="tenkhachsan" class="form-control" value="@item.tenkhachsan">
+                                        
+                                            <span onclick="document.getElementById('@item.id').style.display = 'none'" id="close" title="Close Modal">&times;</span>
+                                       
+                                        <div class="vc_span12 wpb_column vc_column_container">
+                                            <div class="vc_span3 wpb_column vc_column_container">
+                                                <span>Tên và tên</span>
+                                            </div>
+                                            <div class="vc_span9 wpb_column vc_column_container">
+                                                <input type="text" name="ten" class="ten" >
+                                                <span id="c" style="color:red"></span>
+                                                <div id="widget-ten" data-notify-type="success" data-notify-msg=""></div>
+                                            </div>
+                                        </div>
+                                        <div class="vc_span12 wpb_column vc_column_container">
+                                            <div class="vc_span3 wpb_column vc_column_container">
+                                                <span>Địa chỉ</span>
+                                            </div>
+                                            <div class="vc_span9 wpb_column vc_column_container">
+                                                <input type="text" name="diachi" class="diachi" >
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="vc_span12 wpb_column vc_column_container">
+                                            <div class="vc_span3 wpb_column vc_column_container">
+                                                <span>Email</span>
+                                            </div>
+                                            <div class="vc_span9 wpb_column vc_column_container">
+                                                <input type="text" name="email" id="newsletter-email-3" class="email" >
+                                            </div>
+                                            <div id="widget-subscribe-form-result" data-notify-type="success" data-notify-msg=""></div>
+                                        </div>
+                                        <div class="vc_span12 wpb_column vc_column_container">
+                                            <div class="vc_span3 wpb_column vc_column_container">
+                                                <span>Điện thoại</span>
+                                            </div>
+                                            <div class="vc_span9 wpb_column vc_column_container">
+                                                <input type="text" name="phones" class="phone" >
+                                               
+                                            </div>
+                                        </div>
+
+                                        <div class="vc_span12 wpb_column vc_column_container">
+                                            <div class="vc_span3 wpb_column vc_column_container">
+                                            </div>
+                                            <div class="vc_span9 wpb_column vc_column_container">
+                                                <div class="clickcheck">
+                                                    <button type="submit" class="btn btn-danger btnregistertrial" onclick="check()">
+                                                        <i class="fa fa-paper-plane-o"></i>&nbsp;Đặt phòng
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+
+
+            </td>
+
+        </tr>
+        <tr>
+
+            <td>@Html.Raw(item.rate)</td>
+
+
+        </tr>
+        <tr>
+
+            <td><b>Địa Chỉ : @Html.DisplayFor(modelItem => item.gia)</b></td>
+
+        </tr>
+        <tr>
+
+            <td><b>Loại phòng : @Html.DisplayFor(modelItem => item.loaiphong)</b></td>
+
+        </tr>
+        <tr>
+
+            <td><b>Số người : @Html.DisplayFor(modelItem => item.songuoi)</b></td>
+
+        </tr>
+
+
+    </table>
+
+}
+
+
+
+<div align="right" style="width: 100%">
+    @*Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount*@
+    @Html.PagedListPager(Model, page => Url.Action("khacsans", new { page }))
+</div>
+
+<script type="text/javascript">
+    function check() {
+        var ten = document.forms['myform']['ten'].value;
+        var diachi = document.forms['myform']['diachi'].value;
+        var email = document.forms['myform']['email'].value;
+        var dienthoai = document.forms['myform']['phone'].value;
+        if (ten == "") {
+            document.getElementById('c').innerHTML = "Họ tên không được bỏ trống";
+            return false;
+        }
+
+        if (diachi == "") {
+            document.getElementById('c').innerHTML = "Địa chỉ không được bỏ trống";
+            return false;
+        }
+
+        if (email == "") {
+            document.getElementById('c').innerHTML = "Email không được bỏ trống";
+            return false;
+        }
+
+        if (dienthoai == "") {
+            document.getElementById('c').innerHTML = "Điện thoại không được bỏ trống";
+            return false;
+        }
+
+    }
+
+
+
+</script>
+
+

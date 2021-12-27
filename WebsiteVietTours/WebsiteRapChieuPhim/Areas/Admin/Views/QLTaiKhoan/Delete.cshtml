@@ -1,0 +1,77 @@
+﻿@model WebsiteRapChieuPhim.Models.admin
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+
+
+<h2 style="margin-left:40%">XÓA TÀI KHOẢN</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                UserName
+            </th>
+            <th>
+                Password
+            </th>
+            <th>
+                Status
+            </th>
+            <th>
+                IsAdmin
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Phone
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.username)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.password)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.status)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.isAdmin)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.email)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.phone)
+            </td>
+            <td>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-primary" />
+
+                    </div>
+                }
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+@Html.ActionLink("Back to List", "layoutIndex")

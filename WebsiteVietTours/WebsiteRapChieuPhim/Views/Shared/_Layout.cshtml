@@ -1,0 +1,1614 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Site.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="upload/img/logo/logo12.png" />
+    <meta name='description'
+          content='Viettour.Media, jsc với nhiều năm kinh nghiệm trong lĩnh vực tổ chức Tour trong nước và quốc tế nhất là Ban lãnh đạo của Viettour.Media, jsc đã gần 20 Năm kinh nghiệm làm việc trong lĩnh vực du lịch và tổ chức sự kiện. ' />
+    <meta name='keywords'
+          content='Viettour, Du Lịch Việt' />
+    <meta name='robots' content='index,follow' />
+    <meta name='revisit-after' content='1 days' />
+    <meta http-equiv='content-language' content='vi' />
+    <!--    for facebook-->
+    <meta property="og:title"
+          content="Viettour Media JSC| Chuyên cung cấp các tour trong và ngoài nước!" />
+    <meta property="og:site_name" content="Viettour Media JSC| Chuyên cung cấp các tour trong và ngoài nước!" />
+    <meta property="og:url" content="gioi-thieu.html" />
+    <meta property="og:description"
+          content="Viettour.Media, jsc với nhiều năm kinh nghiệm trong lĩnh vực tổ chức Tour trong nước và quốc tế nhất là Ban lãnh đạo của Viettour.Media, jsc đã gần 20 Năm kinh nghiệm làm việc trong lĩnh vực du lịch và tổ chức sự kiện. " />
+    <meta property="og:type" content="" />
+    <meta property="og:image"
+          content="upload/img/logo/logo_top.png" />
+    <meta property="og:locale" content="vi" />
+    <!-- for Twitter -->
+    <meta name="twitter:card"
+          content="Viettour.Media, jsc với nhiều năm kinh nghiệm trong lĩnh vực tổ chức Tour trong nước và quốc tế nhất là Ban lãnh đạo của Viettour.Media, jsc đã gần 20 Năm kinh nghiệm làm việc trong lĩnh vực du lịch và tổ chức sự kiện. " />
+    <meta name="twitter:title"
+          content="Viettour Media JSC| Chuyên cung cấp các tour trong và ngoài nước!" />
+    <meta name="twitter:description"
+          content="Viettour.Media, jsc với nhiều năm kinh nghiệm trong lĩnh vực tổ chức Tour trong nước và quốc tế nhất là Ban lãnh đạo của Viettour.Media, jsc đã gần 20 Năm kinh nghiệm làm việc trong lĩnh vực du lịch và tổ chức sự kiện. " />
+    <meta name="twitter:image"
+          content="upload/img/logo/logo_top.png" />
+    <!-- thay đổi css -->
+
+    <link href="~/resource/assets/css/front_end/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/resource/assets/css/front_end/font-awesome.css" rel="stylesheet" />
+    <link href="~/resource/assets/css/front_end/menu-2.css" rel="stylesheet" />
+    <link href="~/resource/assets/css/front_end/owl.carousel.css" rel="stylesheet" />
+    <link href="~/resource/assets/css/front_end/owl.theme.css" rel="stylesheet" />
+    <link href="~/resource/assets/css/front_end/setmedia.css" rel="stylesheet" />
+    <link href="~/resource/assets/css/front_end/style00.css" rel="stylesheet" />
+
+    <link href="~/Content/botchat.css" rel="stylesheet" />
+    <link href="~/Content/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+
+    <link href="~/Content/botChatssss.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="~/resource/assets/js/front_end/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="~/resource/assets/js/front_end/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/resource/assets/js/front_end/menu-2.js"></script>
+    <script type="text/javascript" src="~/resource/assets/js/front_end/style-img.js"></script>
+
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .dangnhap {
+            display: inline-block;
+            color: #ec2327;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 15px;
+            padding: 2px;
+        }
+
+        .dangky {
+            display: inline-block;
+            color: #ec2327;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 0px;
+            padding: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        #menu ul {
+            list-style-type: none;
+        }
+
+            #menu ul li {
+                display: inline-block;
+                position: relative;
+                color: red;
+            }
+
+                #menu ul li a {
+                    text-decoration: none;
+                    display: block;
+                    color: red;
+                }
+
+                #menu ul li:hover {
+                    color: blue;
+                }
+
+                #menu ul li a:hover {
+                    color: blue;
+                }
+
+                #menu ul li > .sub_menu {
+                    display: none;
+                    position: absolute;
+                }
+
+                #menu ul li:hover .sub_menu {
+                    display: block;
+                }
+
+        #menu {
+            display: inline-block;
+            color: #ec2327;
+            font-size: 14px;
+            line-height: 20px;
+            margin: 15px;
+            padding: 2px;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <header id="header">
+        <div class="menu_mb butt_mobile visible-xs visible-sm clearfix">
+            <button class="nav-toggle">
+                <div class="icon-menu">
+                    <span class="line line-1"></span>
+                    <span class="line line-2"></span>
+                    <span class="line line-3"></span>
+                </div>
+            </button>
+            <div class="text-center">
+                <img class="img_logo_mb" src="/resource/upload/img/logo/logo_top.png" alt="Viettour Media JSC| Chuyên cung cấp các tour trong và ngoài nước!" />
+
+            </div>
+        </div>
+        <!-- /menu_mb -->
+
+        <div class="clearfix clearfix-60 visible-sm visible-xs"></div>
+        <section class="sc_header_top">
+            <div class="container">
+                <div class="row_pc">
+
+                    <div class="pull-left hidden-sm hidden-xs">
+                        <h1 class="logo_pc">
+                            <a href="#">
+                                <img src="/resource/upload/img/logo/logo_top.png" alt="Viettour Media JSC| Chuyên cung cấp các tour trong và ngoài nước!" />
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="pull-right">
+                        <div class="dropdown box_support_hd">
+
+                            <ul class="dropdown-menu drop_sp_hd">
+                                <li>
+                                    <div class="number_sp_hd">0904 639 966</div>
+                                    <div class="link_sp_hd">
+                                        <a href="#" class="sp_yh">
+                                            <img src="/resource/assets/css/img/sp_yh.gif" alt="Phụ Trách Tour Triều Tiên" />
+                                        </a>
+                                        <a href="skype:hung_hncapitaltravel?call" class="sp_skype">
+                                            <img src="/resource/assets/css/img/sp_skype.png" alt="Phụ Trách Tour Triều Tiên" />
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="number_sp_hd">0916 045 511</div>
+                                    <div class="link_sp_hd">
+                                        <a href="#" class="sp_yh">
+                                            <img src="/resource/assets/css/img/sp_yh.gif" alt="Phụ Trách Tour Nội Địa Và Đặt Xe Du Lịch" />
+                                        </a>
+                                        <a href="skype:viettourjsc@viettour.com.vn?call" class="sp_skype">
+                                            <img src="/resource/assets/css/img/sp_skype.png" alt="Phụ Trách Tour Nội Địa Và Đặt Xe Du Lịch" />
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="number_sp_hd"></div>
+                                    <div class="link_sp_hd">
+                                        <a href="#" class="sp_yh">
+                                            <img src="/resource/assets/css/img/sp_yh.gif" alt="Phụ Trách Tour Nhật, Hàn Và Toàn Bộ Mảng Visa" />
+                                        </a>
+                                        <a href="skype:visa@viettour.com.vn?call" class="sp_skype">
+                                            <img src="/resource/assets/css/img/sp_skype.png" alt="Phụ Trách Tour Nhật, Hàn Và Toàn Bộ Mảng Visa" />
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="number_sp_hd">0917 015 511</div>
+                                    <div class="link_sp_hd">
+                                        <a href="#" class="sp_yh">
+                                            <img src="/resource/assets/css/img/sp_yh.gif" alt="Phụ Trách Tour Thái, Malaysia, Singapore" />
+                                        </a>
+                                        <a href="skype:operator@viettour.com.vn?call" class="sp_skype">
+                                            <img src="/resource/assets/css/img/sp_skype.png" alt="Phụ Trách Tour Thái, Malaysia, Singapore" />
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="number_sp_hd">0914 480 088</div>
+                                    <div class="link_sp_hd">
+                                        <a href="#" class="sp_yh">
+                                            <img src="/resource/assets/css/img/sp_yh.gif" alt="Phụ Trách Tour Châu Âu, Úc, Mỹ, Dubai" />
+                                        </a>
+                                        <a href="skype:sales01.viettour?call" class="sp_skype">
+                                            <img src="/resource/assets/css/img/sp_skype.png" alt="Phụ Trách Tour Châu Âu, Úc, Mỹ, Dubai" />
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="number_sp_hd">0965 711 889</div>
+                                    <div class="link_sp_hd">
+                                        <a href="#" class="sp_yh">
+                                            <img src="/resource/assets/css/img/sp_yh.gif" alt="Phụ Trách Tour HongKong, Trung Quốc, Ma Cao, Đài Loan" />
+                                        </a>
+                                        <a href="skype:sales06.hanoi@viettour.com.vn?call" class="sp_skype">
+                                            <img src="/resource/assets/css/img/sp_skype.png" alt="Phụ Trách Tour HongKong, Trung Quốc, Ma Cao, Đài Loan" />
+                                        </a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+
+                        <a href="mailto:info@viettour.com.vn" class="email_header">info@viettour.com.vn</a>
+                        <div class="list_link_hd" style="width:150px;">
+                            <a href="#" id="translate_select" style="width:150px;"></a>
+
+                        </div>
+                        @*facebook*@
+
+
+                        @*FaceBook*@
+                        <div class="list_link_hd">
+
+
+                            <a href="https://www.facebook.com/viettravelvn/" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-google-plus"></a>
+                            <a href="#" class="fa fa-pinterest"></a>
+                            <a href="#" class="fa fa-rss"></a>
+
+
+                        </div>
+
+                        @if (Session["user"] != null || TempData["email"] != null)
+                        {
+
+                            if (@Session["user"] == null)
+                            {
+                                <div id="menu">
+
+                                    <ul>
+                                        <li> <i class="glyphicon glyphicon-user"></i></li>
+                                        <li>
+                                            @{
+                                                string str1 = @TempData["email"].ToString();
+                                                string tr1 = str1.Replace("@gmail.com", "");
+                                            }
+                                            Xin chào,@tr1&nbsp;||
+
+                                        </li>
+                                        <li>@Html.ActionLink("Thoát", "logout", "Home")</li>
+
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <div id="menu">
+
+                                    <ul>
+                                        <li> <i class="glyphicon glyphicon-user"></i></li>
+                                        <li>
+                                            Xin chào,@Session["user"].ToString()&nbsp;||
+
+                                        </li>
+                                        <li>@Html.ActionLink("Thoát", "logout", "Home")</li>
+
+                                    </ul>
+                                </div>
+                            }
+
+
+                        }
+                        else
+                        {    
+                                                    <style>
+                                                        .bells{
+                                                            position:relative;
+                                                            width:40px;
+                                                            height:20px;
+                                                        }
+                                                        .newss {
+                                                            position: absolute;
+                                                            width: 20px;
+                                                            height: 12px;
+                                                            left: 79%;
+                                                            top: 12px;
+                                                        }
+                                                    </style>
+                           
+                            <a class="dangnhap" href="@Url.Action("loginUser","Home")">Đăng nhập</a>
+                            <a class="dangky" href="@Url.Action("registerUser","Home")">Đăng ký</a>
+
+
+                        }
+
+
+                        @*<a class="dangnhap" href="@Url.Action("loginUser","Home")">Đăng nhập</a>
+                            <a class="dangnhap" href="@Url.Action("registerUser","Home")">Đăng ký</a>*@
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="clearfix"></div>
+
+        <section class="sc_header_mid">
+
+            <div class="container">
+                <div class="row_pc">
+                    <img class="w_100" src="/resource/upload/img/banner/header1250x170-0907-01.jpg" alt="" />
+                </div>
+            </div>
+        </section>
+
+        <div class="clearfix"></div>
+
+        <section class="sc_header_menu clearfix sticky-header">
+            <div class="container">
+                <div class="row_pc">
+
+                    <div class="menu_main">
+                        <nav class="nav is-fixed" role="navigation">
+                            <div class="wrapper wrapper-flush">
+                                <div class="nav-container">
+                                    <ul class="nav-menu menu clearfix">
+                                        <li class="menu-item ">
+                                            <a href="/Home/TrangChu" class="menu-link" style="background-color:#065318;color:#ffd800">Trang Chủ</a>
+                                        </li>
+                                        <li class="menu-item ">
+                                            <a href="/Home/Index" class="menu-link ">Giới thiệu</a>
+                                        </li>
+                                        <li class="menu-item "><a href="/Home/TuorKhuyenMai" class="menu-link ">TOUR KHUYẾN MÃI</a></li>
+
+
+                                        <li class="menu-item has-dropdown  ">
+                                            <a href="@Url.Action("tournuoc","TourTrongNuocs",new {id = ""})" class="menu-link ">TOUR TRONG NƯỚC</a>
+                                            <ul class="nav-dropdown menu mega_drop">
+                                                <li class="menu-item"><a href="@Url.Action("tournuoc", "TourTrongNuocs", new {id=1})" class="menu-link">Du Lịch Cao Bằng</a></li>
+                                                <li class="menu-item"><a href="" class="menu-link">Du Lịch Hạ Long &amp;Cát Bà</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-sam-son" class="menu-link">Du Lịch Sầm Sơn</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuoc", "TourTrongNuocs", new {id=3})" class="menu-link">Du Lịch Nha trang</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-sapa-dong-tay-bac" class="menu-link">Du Lịch Sapa &amp; Đông Tây Bắc</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-quang-binh" class="menu-link">Du Lịch Quảng Bình</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuoc", "TourTrongNuocs", new {id=5})" class="menu-link">Du Lịch Quy Nhơn</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-phu-quoc" class="menu-link">Du Lịch Phú Quốc</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-hue-da-nang-hoi-an" class="menu-link">Du Lịch Huế, Đà Nắng, Hội An</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuoc", "TourTrongNuocs", new {id=7})" class="menu-link">Du Lịch Đà Lạt, Tây Nguyên</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-mui-ne-phan-thiet" class="menu-link">Du Lịch Mũi Né, Phan Thiết</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-hoi-an" class="menu-link">Du Lịch Hội An</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-moc-chau" class="menu-link">Du Lịch Mộc Châu</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-ha-giang" class="menu-link">Du Lịch Hà Giang</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-le-hoi" class="menu-link">Du Lịch Lễ Hội</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-mien-tay" class="menu-link">Du Lịch Miền Tây</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-con-dao-vung-tau" class="menu-link">Du Lịch Côn Đảo, Vũng Tàu</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="menu-item has-dropdown ">
+                                            <a href="@Url.Action("tournuocngoai","TourNuocNgoai",new {id = ""})" class="menu-link ">TOUR NƯỚC NGOÀI</a>
+
+                                            <ul class="nav-dropdown menu mega_drop">
+                                                <li class="menu-item"><a href="@Url.Action("tournuocngoai", "TourNuocNgoai", new {id= 1})" class="menu-link">Du Lịch Ấn Độ</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-brunei" class="menu-link">Du Lịch Brunei</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-campuchia" class="menu-link">Du Lịch Campuchia</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuocngoai", "TourNuocNgoai", new {id= 2})" class="menu-link">Du Lịch Canada</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-chau-au" class="menu-link">Du Lịch Châu Âu</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-dubai" class="menu-link">Du Lịch Dubai</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuocngoai", "TourNuocNgoai", new {id= 3})" class="menu-link">Du Lịch Đài Loan</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-han-quoc" class="menu-link">Du Lịch Hàn Quốc</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-hong-kong" class="menu-link">Du Lịch Hong Kong</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuocngoai", "TourNuocNgoai", new {id= 5})" class="menu-link">Du Lịch Indonesia</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-lao" class="menu-link">Du Lịch Lào</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-malaysia" class="menu-link">Du Lịch Malaysia</a></li>
+                                                <li class="menu-item"><a href="@Url.Action("tournuocngoai", "TourNuocNgoai", new {id= 10})" class="menu-link">Du Lịch Mỹ</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-myanmar" class="menu-link">Du Lịch Myanmar</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-maldives" class="menu-link">Du Lịch Maldives</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-nam-phi" class="menu-link">Du Lịch Nam Phi</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-nga" class="menu-link">Du Lịch Nga</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-nhat-ban" class="menu-link">Du Lịch Nhật Bản</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-philippines" class="menu-link">Du Lịch Philippines</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-singapore" class="menu-link">Du Lịch Singapore</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-thai-lan" class="menu-link">Du Lịch Thái Lan</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-trieu-tien" class="menu-link">Du Lịch Triều Tiên</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-trung-quoc" class="menu-link">Du Lịch Trung Quốc</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-uc" class="menu-link">Du Lịch Úc</a></li>
+                                                <li class="menu-item"><a href="http://viettour.com.vn/du-lich-chua-benh" class="menu-link">Du Lịch Chữa Bệnh</a></li>
+                                            </ul>
+                                        </li>
+
+
+                                        <li class="menu-item">
+                                            <a href="@Url.Action("TourHot","Home")" class="menu-link ">TOUR HOT <img src="https://www.fiditour.com/Upload/images/Icons/hot2.gif" alt="Tour giá tốt"></a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="@Url.Action("khacsans","KhachSan")" class="menu-link ">KHÁCH SẠN</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="@Url.Action("tXe","thongtinxe")" class="menu-link ">THUÊ XE</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="@Url.Action("tinTuc","TinTucss")" class="menu-link ">TIN TỨC</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="/Home/thanhToan" class="menu-link ">THANH TOÁN</a>
+                                        </li>
+
+                                        <li class="menu-item">
+                                            <a href="/Home/LienHe" class="menu-link ">LIÊN HỆ</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        @*img headear
+            <img class="w_100" src="/resource/upload/img/banner/thailan1349x401-2207.jpg" alt="" />*@
+        @*<div class="slideshow-container" style="background-color:palevioletred;width:100%;height:600px">
+
+                <div class="mySlides fade">
+                    <img src="~/resource/upload/images/111.jpg" style="width:100%">
+
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="~/resource/upload/images/222.jpg" style="width:100%">
+
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="~/resource/upload/images/333.jpg" style="width:100%">
+
+                </div>
+                <div class="mySlides fade">
+                    <img src="~/resource/upload/images/444.jpg" style="width:100%">
+
+                </div>
+                <div class="mySlides fade">
+                    <img src="~/resource/upload/images/555.jpg" style="width:100%">
+
+                </div>
+            </div>
+            <br>*@
+        @*<div style="text-align:center">
+                <span class="dot" onclick="currentSlide(0)"></span>
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>*@
+        <style>
+            .slide {
+                width: 1519px;
+                background-color: red;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .dieuhuong {
+                position: absolute;
+                top: 48%;
+                font-size: 40px;
+                color: orangered;
+                margin-left: 10px;
+            }
+
+                .dieuhuong i:last-child {
+                    position: relative;
+                    left: 1420px;
+                }
+
+            .chuyen-slide {
+                width: 9999px;
+                transition: all 0.5s;
+            }
+
+            .slide .imgs {
+                width: 1519px;
+                height: 400px;
+                float: left;
+            }
+        </style>
+        <div class="slide">
+            <div class="dieuhuong">
+                <i class="fa fa-chevron-circle-left" onclick="Back();"></i>
+                <i class="fa fa-chevron-circle-right" onclick="Next();"></i>
+            </div>
+            <div class="chuyen-slide">
+                <img class="imgs" src="~/resource/upload/images/111.jpg">
+
+                <img class="imgs" src="~/resource/upload/images/222.jpg">
+
+                <img class="imgs" src="~/resource/upload/images/333.jpg">
+
+
+                <img class="imgs" src="~/resource/upload/images/444.jpg">
+                <img class="imgs" src="~/resource/upload/images/555.jpg">
+                <img class="imgs" src="~/resource/upload/images/666.jpg">
+            </div>
+        </div>
+        <script type="text/javascript">
+            var KichThuoc = document.getElementsByClassName("slide")[0].clientWidth;
+            var ChuyenSlide = document.getElementsByClassName("chuyen-slide")[0];
+            var Img = ChuyenSlide.getElementsByTagName("img");
+            var Max = KichThuoc * Img.length;
+            Max -= KichThuoc;
+            var Chuyen = 0;
+            function Next() {
+
+                if (Chuyen < Max) Chuyen += KichThuoc;
+                else Chuyen = 0;
+                ChuyenSlide.style.marginLeft = '-' + Chuyen + 'px';
+
+            }
+
+            function Back() {
+                if (Chuyen == 0) Chuyen = Max;
+                else Chuyen -= KichThuoc;
+                ChuyenSlide.style.marginLeft = '-' + Chuyen + 'px';
+            }
+            setInterval(function () {
+
+                Next();
+            }, 3000);
+
+
+        </script>
+
+
+
+
+
+        @*<section class="sc_slider_main">
+
+                <%--
+            </section>--%>*@
+    </header>
+    <!-- end header-->
+
+    <div class="clearfix clearfix-30"></div>
+    <article id="body_home">
+        <div class="container">
+            <div class="row_pc">
+
+                <section class="sc_page clearfix">
+                    <div class="row">
+                        @RenderPage("_Navigation.cshtml")
+
+                        <div class="col-md-9 col-sm-12 col-xs-12">
+                            <div class="clearfix"></div>
+                            <div class="page_news">
+                                <section id="main">
+
+                                    @RenderBody()
+                                </section>
+                                <div class="clearfix clearfix-30"></div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </article>
+
+    @*End Content*@
+    <div class="clearfix clearfix-20"></div>
+    <footer id="footer">
+        <section class="partner">
+            <div class="container">
+                <div class="row_pc">
+                    <div class="owl-carousel slider_partner" style="background: #ffffff; border-radius: 5px; margin-bottom: 10px">
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/logo-Vna.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac21.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac11.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac7.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac61.jpg" alt="" />
+                            </a>
+                        </div>
+
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac41.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac31.jpg" alt="" />
+                            </a>
+                        </div>
+                        <div class="item" style="padding: 5px">
+                            <a href="#">
+                                <img class="w_100" src="/resource/upload/img/banner/doitac8.jpg" alt="" />
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partner">
+            <div class="container">
+                <div class="row_pc">
+                    <h2 class="tit_form"></h2>
+                    <div class="clearfix"></div>
+
+                </div>
+        </section>
+
+
+        @*-------------footer--------------*@
+    <footer id="footer">
+        <section class="partner">
+            <div class="container">
+                <div class="row_pc">
+                    <div class="owl-carousel slider_partner owl-theme" style="background: rgb(255, 255, 255); border-radius: 5px; margin-bottom: 10px; opacity: 1; display: block;">
+                        <div class="owl-wrapper-outer">
+                            <div class="owl-wrapper" style="width: 2808px; left: 0px; display: block; transition: all 500ms ease 0s; transform: translate3d(-156px, 0px, 0px);">
+                                <div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/logo-Vna.png" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac21.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac11.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac7.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac61.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac51.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac41.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac31.jpg" alt=""></a>
+                                    </div>
+                                </div><div class="owl-item" style="width: 156px;">
+                                    <div class="item" style="padding: 5px">
+                                        <a href=""><img class="w_100" src="http://viettour.com.vn/upload/img/banner/doitac8.jpg" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <div class="owl-controls clickable" style="display: block;"><div class="owl-pagination"><div class="owl-page"><span class=""></span></div><div class="owl-page active"><span class=""></span></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sc_footer_form">
+            <div class="container">
+                <div class="row_pc">
+                    <div class="sc_line_dual"></div>
+                    <h2 class="tit_form">ĐĂNG KÝ NHẬN EMAIL KHUYẾN MẠI</h2>
+                    <div class="clearfix"></div>
+                    <form class="form_dknem">
+                        <input placeholder="Tên của bạn" class="es_af_tb_css" name="es_af_txt_nm" id="es_af_txt_nm" value="" maxlength="225" type="text">
+                        <input placeholder="Email của bạn" class="es_af_tb_css" name="es_af_txt_em" id="es_af_txt_em" value="" maxlength="225" type="text">
+                        <input class="es_af_bt_css" name="es_af_btn" id="es_af_btn" value="Đăng Ký" type="submit">
+                    </form>
+                    <div class="sc_line_dual"></div>
+                </div>
+            </div>
+        </section>
+        <section class="partner">
+            <div class="container">
+                <div class="row_pc">
+                    <h2 class="tit_form"></h2>
+                    <div class="clearfix"></div>
+                    <div class="owl-carousel slider_ykien owl-theme" style="opacity: 1; display: block;">
+                        <div class="owl-wrapper-outer">
+                            <div class="owl-wrapper" style="width: 2504px; left: 0px; display: block; transition: all 500ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                                <div class="owl-item" style="width: 313px;">
+                                    <div class="item" style="padding: 5px; height: 200px">
+                                        <div class="content_tes">
+                                            Trong chuyến đi này, gia đình chúng tôi gặp sự cố tai nạn bất ngờ nhưng nhờ sự hỗ trợ và giúp đỡ nhanh chóng nhiệt tình của Viettour nên mọi việc cũng đã thu xếp được ổn thỏa và giúp chúng tôi yên tâm hơn.&nbsp;                        <div class="info_tes">
+                                                <img src="/resource/upload/img/nguyen-thi-nhung-14544997.jpg" alt="Avatar" class="avatar">
+                                                <div class="name_tes">Nguyễn thị nhung</div>
+                                                <div class="job_tes"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class="owl-item" style="width: 313px;">
+                                    <div class="item" style="padding: 5px; height: 200px">
+                                        <div class="content_tes">
+                                            Nói chung công ty Viettour xứng đáng để tin tưởng, tôi đã đi rất nhiều các công ty du lịch nhưng tôi thấy công ty mình tính chuyên nghiệp cao, HDV tận tình và có nghiệp vụ trình độ tốt                        <div class="info_tes">
+                                                <img src="/resource/upload/img/le-hoang-lam-son-trang-1454494.jpg" alt="Avatar" class="avatar">
+                                                <div class="name_tes">Lê thị trang</div>
+                                                <div class="job_tes"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class="owl-item" style="width: 313px;">
+                                    <div class="item" style="padding: 5px; height: 200px">
+                                        <div class="content_tes">
+                                            Tôi rất vui khi được đi tour này. Bởi vì, chúng tôi được sự hướng dẫn, giúp đỡ rất nhiệt tình từ Hướng dẫn viên trong nước cũng như ngoài nước. Họ đã đem đến niềm vui và sự an tâm, tin tưởng khi ở trên đất Thái.&nbsp;                        <div class="info_tes">
+                                                <img src="/resource/upload/img/do-huu-doi-145449.jpg" alt="Avatar" class="avatar">
+                                                <div class="name_tes">Đỗ hữu đời</div>
+                                                <div class="job_tes"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><div class="owl-item" style="width: 313px;">
+                                    <div class="item" style="padding: 5px; height: 200px">
+                                        <div class="content_tes">
+                                            Sau khi đi tour tôi cảm thấy rất vui vì nhờ có Hướng dẫn viên của Viettour rất vui vẻ, nhiệt tình hướng dẫn chúng tôi tham quan và cho chúng tôi biết thêm kiến thức về 3 đất nước Singapore – Malaysia – Indones...                        <div class="info_tes">
+                                                <img src="/resource/upload/img/10884_586183561399725_6501735_n.jpg" alt="Avatar" class="avatar">
+                                                <div class="name_tes">Hoàn Yến Nhi</div>
+                                                <div class="job_tes"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="owl-controls clickable" style="display: none;"><div class="owl-pagination"><div class="owl-page active"><span class=""></span></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sc_footer_main">
+            <div class="container">
+                <div class="row_pc">
+                    <div class="list_menu_ft clearfix">
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <h4 class="tit_footer"><a href="http://viettour.com.vn/tour-trong-nuoc.html">TOUR TRONG NƯỚC</a></h4>
+                            <div class="clearfix"></div>
+                            <ul class="menu_ft">
+                                <li><a href="">Du Lịch Hạ Long &amp;Cát Bà</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-sam-son.html">Du Lịch Sầm Sơn</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-nha-trang.html">Du Lịch Nha trang</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-sapa-dong-tay-bac.html">Du Lịch Sapa &amp; Đông Tây Bắc</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-quang-binh.html">Du Lịch Quảng Bình</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-phu-quoc.html">Du Lịch Phú Quốc</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-hue-da-nang-hoi-an.html">Du Lịch Huế, Đà Nắng, Hội An</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-da-lat-tay-nguyen.html">Du Lịch Đà Lạt, Tây Nguyên</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-mui-ne-phan-thiet.html">Du Lịch Mũi Né, Phan Thiết</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-hoi-an.html">Du Lịch Hội An</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-moc-chau.html">Du Lịch Mộc Châu</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-ha-giang.html">Du Lịch Hà Giang</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-le-hoi.html">Du Lịch Lễ Hội</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-mien-tay.html">Du Lịch Miền Tây</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-con-dao-vung-tau.html">Du Lịch Côn Đảo, Vũng Tàu</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-quy-nhon.html">Du Lịch Quy Nhơn</a></li>
+                                <li><a href="@Url.Action("")">Du Lịch Cao Bằng</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12 col-xs-12">
+                            <h4 class="tit_footer"><a href="http://viettour.com.vn/tour-nuoc-ngoai.html">TOUR NƯỚC NGOÀI</a></h4>
+                            <div class="clearfix"></div>
+                            <ul class="menu_ft">
+                                <li><a href="http://viettour.com.vn/du-lich-an-do.html">Du Lịch Ấn Độ</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-brunei.html">Du Lịch Brunei</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-campuchia.html">Du Lịch Campuchia</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-chau-au.html">Du Lịch Châu Âu</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-dubai.html">Du Lịch Dubai</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-dai-loan.html">Du Lịch Đài Loan</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-han-quoc.html">Du Lịch Hàn Quốc</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-hong-kong.html">Du Lịch Hong Kong</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-indonesia.html">Du Lịch Indonesia</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-lao.html">Du Lịch Lào</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-malaysia.html">Du Lịch Malaysia</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-my.html">Du Lịch Mỹ</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-myanmar.html">Du Lịch Myanmar</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-maldives.html">Du Lịch Maldives</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-nam-phi.html">Du Lịch Nam Phi</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-nga.html">Du Lịch Nga</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-nhat-ban.html">Du Lịch Nhật Bản</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-philippines.html">Du Lịch Philippines</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-singapore.html">Du Lịch Singapore</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-thai-lan.html">Du Lịch Thái Lan</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-trung-quoc.html">Du Lịch Trung Quốc</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-uc.html">Du Lịch Úc</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-chua-benh.html">Du Lịch Chữa Bệnh</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-canada.html">Du Lịch Canada</a></li>
+                                <li><a href="http://viettour.com.vn/du-lich-trieu-tien.html">Du Lịch Triều Tiên</a></li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+                    <div class="footer_bot">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="clearfix clearfix-30"></div>
+                                <h4 class="tit_ft_bot">Viettour Media JSC| Chuyên cung cấp các tour trong và ngoài nước!</h4>
+                                <div class="clearfix"></div>
+                                <div class="add_ft_bot">
+                                    <p><strong><span style="color: rgb(0, 0, 0);"><span style="font-size: 13px; font-family: arial, helvetica, sans-serif;">Văn phòng GD:&nbsp;</span></span></strong>Tầng 8 Tòa Nhà LICOGI 12&nbsp;-&nbsp;<span style="color: rgb(0, 0, 0);"><span style="font-size: 13px; font-family: arial, helvetica, sans-serif;">Số 21 Phố Đại Từ, P.Đại Kim, Q.Hoàng Mai, TP.Hà Nội</span></span></p>
+
+                                    <p><span style="font-size:13px;"><span style="color:#000000;"><span style="font-family:arial,helvetica,sans-serif;"><b>Tel: </b>024 6291 9588 - <b>Fax:</b> 04 62737805</span></span></span></p>
+
+                                    <p><span style="font-size:13px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#000000;"><b>Email:&nbsp;</b></span><a href="" target="_blank"><span style="color:#000000;">info@viettour.com.vn</span></a></span></span></p>
+
+                                    <p><span style="font-size:13px;"><span style="font-family:arial,helvetica,sans-serif;"><span style="color:#000000;"><b>Website:</b> </span><a href="" target="_blank"><span style="color:#000000;">www.viettour.com.vn&nbsp;</span></a><span style="color:#000000;">, </span><a href="http://visa.viettour.com.vn"><span style="color:#000000;">visa.viettour.com.vn&nbsp;</span></a></span></span></p>
+                                    <span style="font-size:13px;"><span style="color:#000000;"><strong>MST</strong>: 0108679852 </span></span>
+
+                                    <p><span style="font-size:13px;"><span style="color:#000000;">Giấy phép kinh doanh lữ hành quốc tế số: 01-1350 /2019 /TCDL-GP LHQT&nbsp;</span></span></p>
+                                    <script id="autoAdsMaxLead-widget-script" src="https://cdn.autoads.asia/scripts/autoads-maxlead-widget.js?business_id=1E44876FA34540E887608C52CDC514D5" type="text/javascript" charset="UTF-8" async=""></script> <!--Start of Tawk.to Script-->
+                                    <script type="text/javascript">
+                                        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+                                        (function () {
+                                            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                                            s1.async = true;
+                                            s1.src = 'https://embed.tawk.to/5d8ac572db28311764d5b674/default';
+                                            s1.charset = 'UTF-8';
+                                            s1.setAttribute('crossorigin', '*');
+                                            s0.parentNode.insertBefore(s1, s0);
+                                        })();
+                                    </script> <!--End of Tawk.to Script--> <!-- Load Facebook SDK for JavaScript -->
+
+                                    <div id="fb-root">&nbsp;</div>
+                                    <script>
+                                        window.fbAsyncInit = function () {
+                                            FB.init({
+                                                xfbml: true,
+                                                version: 'v4.0'
+                                            });
+                                        };
+
+                                        (function (d, s, id) {
+                                            var js, fjs = d.getElementsByTagName(s)[0];
+                                            if (d.getElementById(id)) return;
+                                            js = d.createElement(s); js.id = id;
+                                            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+                                            fjs.parentNode.insertBefore(js, fjs);
+                                        }(document, 'script', 'facebook-jssdk'));</script> <!-- Your customer chat code -->
+
+                                    <div attribution="setup_tool" class="fb-customerchat" logged_in_greeting="Xin chào! Viettour có thể giúp gì cho bạn?" logged_out_greeting="Xin chào! Viettour có thể giúp gì cho bạn?" page_id="500009410063846">&nbsp;</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="clearfix clearfix-30"></div>
+                                <h4 class="tit_ft_bot">Thông Tin Cần Biết</h4>
+                                <div class="clearfix"></div>
+                                <div class="add_ft_bot">
+                                    <div>
+                                        <span style="font-size:13px;">
+                                            <a href="http://viettour.com.vn/gioi-thieu.html"><span style="color:#000000;">Về Chúng Tôi</span></a><br>
+                                            <a href="http://viettour.com.vn/thanh-toan.html"><span style="color:#000000;">Thanh Toán</span></a><br>
+                                            <a href="http://viettour.com.vn/chinh-sach-hoan-huy-dich-vu"><span style="color:#000000;">Chính Sách Hoàn Hủy Dịch Vụ</span></a><br>
+                                            <a href="http://viettour.com.vn/chinh-sach-dieu-khoan-chung.html"><span style="color:#000000;"><span style="font-family: Roboto, Arial, Tahoma, sans-serif; background-color: rgb(249, 249, 249);">Chính sách điều khoản chung</span></span></a><br>
+                                            <a href="http://viettour.com.vn/chinh-sach-bao-mat-thong-tin"><span style="color:#000000;">Chính sách bảo mật thông tin</span></a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="clearfix clearfix-30"></div>
+                                <h4 class="tit_ft_bot"></h4>
+                                <div class="clearfix"></div>
+                                <div class="add_ft_bot">
+                                    <div style="text-align: center;"><a href="http://online.gov.vn/HomePage/CustomWebsiteDisplay.aspx?DocId=56108"><img alt="website đã thông báo bộ công thương" src="~/resource/assets/css/img/tt.png" style="width: 250px; height: 95px; float: left;"></a></div>
+                                    <!-- Load Facebook SDK for JavaScript -->
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="fb-root"></div>
+                    <script>
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.9&appId=200182103772637";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="clearfix clearfix-40"></div>
+                    <div class="list_last_ft">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="box_fb_ft">
+                                    <div class="fb-page" data-href="https://www.facebook.com/viettravelvn/" data-width="420"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <strong class="title_link_ft">Kết nối với Viettour.com.vn</strong>
+                                <div class="clearfix"></div>
+                                <div class="list_link_ft">
+                                    <a href="https://www.facebook.com/viettravelvn/" class="fa fa-facebook"></a>
+                                    <a href="" class="fa fa-google-plus"></a>
+                                    <a href="https://www.youtube.com/channel/UCxTOmsOlA2mTTVaNKKg_CuQ" class="fa fa-youtube-play"></a>
+                                    <a href="" class="fa fa-twitter"></a>
+                                    <a href="" class="fa fa-pinterest-p"></a>
+                                </div>
+                                <div class="clearfix clearfix-20"></div>
+                                <div class="text-center">
+                                    <a href="" class="logo_ft"><img src="http://viettour.com.vn/upload/img/logo/logo_ft1.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="widget_tour_subscribe">
+                                    <a href="https://www.fun169.com/vn/home.htm" rel="nofollow">
+                                        <img src="/resource/assets/css/img/ct_hl.jpg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                    <div class="text-center paygment_ft">
+                        <img src="/resource/assets/css/img/payment-accept.jpg" alt="">
+                    </div>
+                    <div class="clearfix clearfix-10"></div>
+
+                </div>
+            </div>
+        </section>
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/58414d33d6eaec04d65ded6b/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+
+
+        @*BOTCHAT*@
+
+
+        @*Botchat*@
+        <style>
+
+
+
+            /* button used to open the chat form - fixed at the bottom of the page */
+            .open-button {
+               background-color:blueviolet;
+                image-rendering: pixelated;
+                padding: 10px 10px;
+                border: 0;
+                cursor: pointer;
+                object-fit: contain;
+                position: fixed;
+                bottom: 100px;
+                right: 28px;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                -webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+                transition: width 2s, height 2s, background-color 2s, transform 2s;
+                image-rendering: pixelated;
+            }
+
+                .open-button:hover {
+                    padding: 16px 20px;
+                    border: none;
+                    cursor: pointer;
+                    opacity: 1;
+                    position: fixed;
+                    bottom: 100px;
+                    right: 28px;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    -webkit-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+
+            /* the popup chat - hidden by default */
+
+
+
+
+        </style>
+
+
+        <img src="~/resource/admin/images/speech-bubble.png" class="open-button" onclick="openForm()" />
+
+       
+       
+
+
+        <style>
+            #footer textarea, textarea {
+                height: 20px;
+                width: 212px;
+                padding: 0px 10px 11px;
+                resize: vertical;
+            }
+
+            .chatbox__onlineDot {
+                position: absolute;
+                right: 33%;
+                bottom: 65px;
+                display: block;
+                background: #00c853;
+                height: 10px;
+                width: 10px;
+                border-radius: 10px;
+                margin-left: 5px;
+                animation-name: blinking;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+            }
+
+            .emojis {
+                position: absolute;
+                display: block;
+                bottom: 9px;
+                left: 200px;
+                width: 25px;
+                height: 25px;
+                background-image: url(https://i.imgur.com/5WUpcPZ.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                z-index: 100;
+                cursor: pointer;
+            }
+
+                .emojis:active {
+                    opacity: 0.9;
+                }
+
+            .icon-item {
+                margin-top: 20px;
+                position: relative;
+                display: none;
+                background-color: navajowhite;
+                width: 180px;
+                height: 70px;
+                border-radius: 25px;
+            }
+
+                .icon-item ul {
+                    margin-top: -3px;
+                    list-style-type: none;
+                }
+
+                .icon-item li a {
+                    text-decoration: none;
+                }
+
+                .icon-item li {
+                    display: inline-block;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 40px;
+                    margin-left: 10px;
+                }
+
+
+            .textreass {
+                height: 200px;
+                width: 280px;
+                padding: 0px 10px 11px;
+                resize: vertical;
+            }
+        </style>
+        <section class="avenue-messenger" id="myForm" style="display:none">
+
+            <div class="menu">
+                <div class="items">
+                    <span>
+                        <a href="#" title="Minimize" onclick="closeForm()">&mdash;</a><br>
+
+
+                        <a href="#" title="End Chat">&#10005;</a>
+
+                    </span>
+                </div>
+                <div class="button">...</div>
+            </div>
+            <div class="agent-face">
+                <div class="half">
+                    <img class="agent circle" src="~/resource/upload/img/logo/logo12.png" alt="Jesse Tino">
+                </div>
+            </div>
+            <div class="chat">
+                <div class="chat-title">
+                    <h1 style="color:yellow">VietTour.com.vn</h1>
+                    <h2 style="color:yellow">Gửi trọn niềm vui</h2>
+                    <div class="chatbox__onlineDot"></div>
+
+                </div>
+                <div class="messages">
+                    <div id="messagess" class="messages-content"></div>
+
+
+                </div>
+                <div class="message-box">
+                    <textarea id="input" type="text" placeholder="Say something..." class="message-input" autocomplete="off" autofocus="true"></textarea>
+
+
+                    <div class="emojis" onclick="displayicon()"></div>
+                    <button type="submit" class="message-submit">Send</button>
+
+
+                </div>
+            </div>
+            <div id="icon-all" class="icon-item">
+                <ul>
+                    <li><a href="#" id="w3s">❣️</a></li>
+                    <li><a href="#" id="w4s">😂</a></li>
+                    <li><a href="#" id="w5s">😍</a></li>
+                    <li><a href="#" id="w6s">😆</a></li>
+                    <li><a href="#" id="w7s">😠</a></li>
+                    <li><a href="#" id="w8s">😷</a></li>
+                    <li><a href="#" id="w9s">👌</a></li>
+                    <li><a href="#" id="w10s">😱</a></li>
+                </ul>
+
+            </div>
+        </section>
+
+
+
+        @*<div class="emojis" onclick="displayicon()"></div>*@
+
+
+        <script src="~/Scripts/botChatRobot2.js"></script>
+
+
+        <script src="~/Scripts/botChatRobot.js"></script>
+        <script src="~/Scripts/iconchat.js"></script>
+        <script type="text/javascript">
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+
+            $('.button').click(function () {
+                $('.menu .items span').toggleClass('active');
+                $('.menu .button').toggleClass('active');
+            });
+
+
+        </script>
+
+
+
+
+
+
+
+        @*EndBotChat*@
+
+        @*EndBotChat*@
+        <a href="#top" id="go_top" style="display: block;"><i class="fa fa-angle-up"></i></a>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".slider_main").owlCarousel({
+                    navigation: true,
+                    items: 1,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 1],
+                    itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: false,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 2000,
+                    paginationSpeed: 1000,
+                    rewindSpeed: 1000,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+            $(document).ready(function () {
+                $(".slider_partner").owlCarousel({
+                    navigation: false,
+                    items: 8,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 4],
+                    itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: false,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 1000,
+                    paginationSpeed: 500,
+                    rewindSpeed: 500,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+            $(document).ready(function () {
+                $(".slider_ykien").owlCarousel({
+                    navigation: false,
+                    items: 4,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 4],
+                    itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: false,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 1000,
+                    paginationSpeed: 500,
+                    rewindSpeed: 500,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+            $(document).ready(function () {
+                $(".slider_tour").owlCarousel({
+                    navigation: true,
+                    items: 5,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 4],
+                    itemsDesktopSmall: [979, 3],
+                    itemsTablet: [768, 2],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: true,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 100,
+                    paginationSpeed: 500,
+                    rewindSpeed: 500,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+
+
+
+            $("a[href='#top']").click(function () {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 200) {
+                    $('#go_top').show();
+                }
+                else {
+                    $('#go_top').hide();
+                }
+            });
+        </script>
+
+
+    </footer>
+
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/58414d33d6eaec04d65ded6b/default';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+
+
+        <!--End of Tawk.to Script-->
+        <a href="#top" id="go_top"><i class="fa fa-angle-up"></i></a>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".slider_main").owlCarousel({
+                    navigation: true,
+                    items: 1,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 1],
+                    itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: false,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 2000,
+                    paginationSpeed: 1000,
+                    rewindSpeed: 1000,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+            $(document).ready(function () {
+                $(".slider_partner").owlCarousel({
+                    navigation: false,
+                    items: 8,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 4],
+                    itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: false,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 1000,
+                    paginationSpeed: 500,
+                    rewindSpeed: 500,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+            $(document).ready(function () {
+                $(".slider_ykien").owlCarousel({
+                    navigation: false,
+                    items: 4,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 4],
+                    itemsDesktopSmall: [979, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: false,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 1000,
+                    paginationSpeed: 500,
+                    rewindSpeed: 500,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+            $(document).ready(function () {
+                $(".slider_tour").owlCarousel({
+                    navigation: true,
+                    items: 5,
+                    itemsCustom: false,
+                    itemsDesktop: [1199, 4],
+                    itemsDesktopSmall: [979, 3],
+                    itemsTablet: [768, 2],
+                    itemsTabletSmall: false,
+                    itemsMobile: [479, 1],
+                    singleItem: false,
+                    itemsScaleUp: false,
+                    autoHeight: true,
+
+                    navigationText: ["", ""],
+                    rewindNav: true,
+                    scrollPerPage: false,
+
+                    slideSpeed: 100,
+                    paginationSpeed: 500,
+                    rewindSpeed: 500,
+                    autoPlay: true,
+                    baseClass: "owl-carousel",
+                    theme: "owl-theme",
+                    stopOnHover: true,
+
+                    lazyLoad: false,
+                    lazyFollow: true,
+                    lazyEffect: "fade"
+                });
+            });
+
+
+
+            $("a[href='#top']").click(function () {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                return false;
+            });
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 200) {
+                    $('#go_top').show();
+                }
+                else {
+                    $('#go_top').hide();
+                }
+            });
+        </script>
+        <script type="text/javascript" src="/resource/assets/js/front_end/owl.carousel.js"></script>
+
+    </footer>
+
+
+
+    @*<script type="text/javascript">
+            //khai báo biến slideIndex đại diện cho slide hiện tại
+            var slideIndex;
+            // KHai bào hàm hiển thị slide
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex].style.display = "block";
+                dots[slideIndex].className += " active";
+                //chuyển đến slide tiếp theo
+                slideIndex++;
+                //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+                if (slideIndex > slides.length - 1) {
+                    slideIndex = 0
+                }
+                //tự động chuyển đổi slide sau 5s
+                setTimeout(showSlides, 5000);
+            }
+            //mặc định hiển thị slide đầu tiên
+            showSlides(slideIndex = 0);
+
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+        </script>*@
+    <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'vi' }, 'translate_select');
+        }
+    </script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

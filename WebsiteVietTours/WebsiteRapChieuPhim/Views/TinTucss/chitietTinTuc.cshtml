@@ -1,0 +1,20 @@
+﻿@model WebsiteRapChieuPhim.Models.TinTuc
+
+@{
+    ViewBag.Title = "chitietTinTuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@*@Html.DisplayFor(model => model.descrip)*@
+@{
+    string str = Model.descrip;
+    string re = str.Replace("/upload", "/resource/upload");
+
+
+}
+
+     
+@Html.Raw(@HttpUtility.HtmlDecode(re))

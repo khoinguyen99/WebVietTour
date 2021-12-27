@@ -1,0 +1,99 @@
+﻿
+<!DOCTYPE html>
+<html lang="vn">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>VietTour Admin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="/resource/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/resource/admin/vendors/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="/resource/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/resource/admin/assets/css/style.css" rel="stylesheet" />
+
+
+    <script src="/resource/admin/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="/resource/popper/popper.min.js"></script>
+    <script src="/resource/admin/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <link href="/resource/summernote/summernote.min.css" rel="stylesheet" />
+    <script src="/resource/summernote/summernote.min.js"></script>
+    
+
+    <script type="text/javascript" src="/resource/assets/js/front_end/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/resource/assets/js/front_end/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/resource/assets/js/front_end/menu-2.js"></script>
+    <script type="text/javascript" src="/resource/assets/js/front_end/style-img.js"></script>
+
+</head>
+<body style="font-size: 14px">
+    <form id="form1" runat="server" method="post">
+        <!-- Left Panel -->
+        <aside id="left-panel" class="left-panel" style="width: 18%">
+            <nav class="navbar navbar-expand-sm navbar-default">
+
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="/resource/admin/images/logo.png" alt="Logo"></a>
+                </div>
+
+                <div id="main-menu" class="main-menu collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href=""> <i class="account_circle"></i>Xin chào,@Session["ten"].ToString()</a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("qlTaiKhoan","QLTaiKhoan")"> <i class="menu-icon fa fa-table"></i>Quản lý Tài Khoản</a>
+
+                        </li>
+
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Quản lý Tin Tức</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fas fa-minus"></i><a href="/page/admin/news/AdminAddNews.aspx">Thêm Tin Tức</a></li>
+                                <li><i class="fas fa-minus"></i><a href="/page/admin/news/ListNews.aspx">Danh sách Tin Tức</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/page/admin/AdminLienHe.aspx"> <i class="menu-icon fa fa-th"></i>Quản lý Liên Hệ</a>
+                        </li>
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Quản lý Tour</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fas fa-minus"></i><a href="/page/admin/tour/AdminAddTour.aspx">Thêm Tour</a></li>
+                                <li><i class="fas fa-minus"></i><a href="/page/admin/tour/ListTour.aspx">Danh sách Tour</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="/page/admin/AdminDatTour.aspx"> <i class="menu-icon fa fa-th"></i>Quản lý OrderTour</a>
+
+                        </li>
+                        <li>
+                            <a href="@Url.Action("logout","Homes")"> <i class="menu-icon fa fa-dashboard"></i>Đăng xuất </a>
+                            @*<i class="menu-icon fa fa-dashboard"></i>@Html.ActionLink("Đăng Xuất","logout","Homes")*@
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        <!-- Left Panel -->
+        <!-- Right Panel -->
+
+        <div class="container right-panel" style="background-color: white; padding-left: 50px">
+            <div class="col-12">
+
+            </div>
+            <div class="col-12">
+                @RenderBody()
+            </div>
+        </div>
+        <!-- Right Panel -->
+    </form>
+
+</body>
+       
+</html>

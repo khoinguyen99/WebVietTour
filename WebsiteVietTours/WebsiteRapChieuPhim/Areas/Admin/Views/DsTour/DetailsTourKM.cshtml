@@ -1,0 +1,111 @@
+﻿@model WebsiteRapChieuPhim.Models.DatTour
+
+@{
+    ViewBag.Title = "DetailsTourKM";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdm.cshtml";
+}
+<style>
+    #father {
+        width: 800px;
+        height: 300px;
+        overflow: auto;
+    }
+
+    dt {
+        color: firebrick;
+        font-size: 25px;
+    }
+</style>
+<h2 style="width:100%;text-align:center">Details TourKM</h2>
+
+
+<div style="width:80%;margin-left:15px">
+    <h4>DatTour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.khoihanhtu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khoihanhtu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thoigian)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thoigian)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khoihanhngay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khoihanhngay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gioithieutour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gioithieutour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.thumnail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.thumnail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chuongtrinhtour)
+        </dt>
+
+        <dd>
+            <div id="father">  @Html.DisplayFor(model => model.chuongtrinhtour)</div>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.khuyenmai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.khuyenmai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diemdenid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diemdenid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tentour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tentour)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditTourKM", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "dstour")
+</p>
